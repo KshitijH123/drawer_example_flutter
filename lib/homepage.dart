@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
               title: Container(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: const Text(
-                  'Home',
+                  'Home2',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0,
