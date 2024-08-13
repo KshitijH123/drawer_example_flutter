@@ -5,7 +5,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Row and Column Example'),
+        title: const Text('Drawer Example'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -16,37 +16,52 @@ class HomePage extends StatelessWidget {
               accountEmail: const Text('kshitijhapase@gmail.com'),
               currentAccountPicture: Image.asset('assets/images/profile.png'),
             ),
-            ListTile(
-              leading: const Icon(Icons.home_filled),
-              title: const Text(
-                'Home',
-                style: TextStyle(
-                  height: 4,
-                  fontWeight: FontWeight.bold,
+           ListTile(
+              leading: const Icon(Icons.home,size: 30.0,),
+              title: Container(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: const Text(
+                  'Home',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    height: 1.5,
+                  ),
                 ),
               ),
               onTap: () {},
             ),
-            ListTile(
-              leading: const Icon(Icons.search_off_outlined),
-              title: const Text(
-                'Search',
-                style: TextStyle(
-                  height: 4,
-                  fontWeight: FontWeight.bold,
+             ListTile(
+              leading: const Icon(Icons.search_off_outlined,
+                  size: 30.0), 
+              title: Container(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 16.0), 
+                child:const Text(
+                  'Search',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0, 
+                    height: 1.5,
+                  ),
                 ),
               ),
               onTap: () {},
             ),
            
-             ListTile(
-              leading: const Icon(Icons.settings), 
-              title: const Text(
-                'Settings',
-                style: TextStyle(
-                  height: 4,
-                  fontWeight: FontWeight.bold, 
-                
+              ListTile(
+              leading: const Icon(Icons.settings,
+                  size: 30.0), 
+              title: Container(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 16.0), 
+                child: const Text(
+                  'Settings',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0, 
+                    height: 1.5, 
+                  ),
                 ),
               ),
               onTap: () {},

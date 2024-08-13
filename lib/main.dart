@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Row and Column Pages',
+      title: 'Drawer Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
