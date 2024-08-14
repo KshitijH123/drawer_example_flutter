@@ -1,3 +1,4 @@
+import 'package:drawer_example_flutter/loginpage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,12 +17,15 @@ class HomePage extends StatelessWidget {
               accountEmail: const Text('kshitijhapase@gmail.com'),
               currentAccountPicture: Image.asset('assets/images/profile.png'),
             ),
-           ListTile(
-              leading: const Icon(Icons.home,size: 30.0,),
+            ListTile(
+              leading: const Icon(
+                Icons.home,
+                size: 30.0,
+              ),
               title: Container(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: const Text(
-                  'Home2',
+                  'Home',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0,
@@ -31,42 +35,71 @@ class HomePage extends StatelessWidget {
               ),
               onTap: () {},
             ),
-             ListTile(
-              leading: const Icon(Icons.search_off_outlined,
-                  size: 30.0), 
+            ListTile(
+              leading: const Icon(Icons.search, size: 30.0),
               title: Container(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 16.0), 
-                child:const Text(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: const Text(
                   'Search',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.0, 
+                    fontSize: 20.0,
                     height: 1.5,
                   ),
                 ),
               ),
               onTap: () {},
             ),
-           
-              ListTile(
-              leading: const Icon(Icons.settings,
-                  size: 30.0), 
+            ListTile(
+              leading: const Icon(Icons.call, size: 30.0),
               title: Container(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 16.0), 
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: const Text(
-                  'Settings',
+                  'Contact Us',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.0, 
-                    height: 1.5, 
+                    fontSize: 20.0,
+                    height: 1.5,
                   ),
                 ),
               ),
               onTap: () {},
             ),
-            
+            ListTile(
+              leading: const Icon(Icons.settings, size: 30.0),
+              title: Container(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: const Text(
+                  'Settings',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    height: 1.5,
+                  ),
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout, size: 30.0),
+              title: Container(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: const Text(
+                  'Log-Out',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    height: 1.5,
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              },
+           ),
           ],
         ),
       ),
