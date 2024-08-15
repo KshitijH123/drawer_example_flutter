@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
             UserAccountsDrawerHeader(
               accountName: const Text('Kshitij'),
               accountEmail: const Text('kshitijhapase@gmail.com'),
-              currentAccountPicture: Image.asset('assets/images/profile.png'),
+              currentAccountPicture: Image.asset('assets/images/new_profile.png'),
             ),
             ListTile(
               leading: const Icon(
