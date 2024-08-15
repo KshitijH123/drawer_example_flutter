@@ -66,6 +66,21 @@ class HomePage extends StatelessWidget {
               onTap: () {},
             ),
             ListTile(
+              leading: const Icon(Icons.question_mark, size: 30.0),
+              title: Container(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: const Text(
+                  'Help & Feedback',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    height: 1.5,
+                  ),
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
               leading: const Icon(Icons.settings, size: 30.0),
               title: Container(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
