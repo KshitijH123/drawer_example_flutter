@@ -32,18 +32,18 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CircleAvatar(
+               const   CircleAvatar(
                     backgroundImage:
                         AssetImage('assets/images/new_profile.png'),
                     radius: 100,
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: TextFormField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
                         hintText: 'Enter email',
                         prefixIcon: Icon(Icons.email),
@@ -54,13 +54,13 @@ class _LoginPageState extends State<LoginPage> {
                       },
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: TextFormField(
                       controller: passwordController,
                       keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Password',
                         hintText: 'Enter password',
                         prefixIcon: Icon(Icons.lock),
@@ -74,14 +74,19 @@ class _LoginPageState extends State<LoginPage> {
                       },
                     ),
                   ),
-                  SizedBox(height: 30),
+                 const SizedBox(height: 30),
                   MaterialButton(
                     onPressed: validateForm,
-                    child: Text('Login'),
+                     child: Text('Login',
+                    style: TextStyle(
+                        fontSize: 16, 
+                        color: Colors.white,
+                      ),
+                    ),
                     color: Colors.blue,
                     textColor: Colors.white,
                   ),
-                  SizedBox(height: 20),
+                const  SizedBox(height: 20),
                   Text('Forgot Password?'),
                 ],
               ),
