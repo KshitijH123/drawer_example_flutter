@@ -36,6 +36,8 @@ flutter:
     - assets/images/icon_home.png
     - assets/images/icon_heart_(1).png
     - assets/images/icon_setting.png
+    - assets/images/icon_user_(1).png
+    - assets/images/icon_clock.png    
 
 
 

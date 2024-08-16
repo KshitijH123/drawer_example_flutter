@@ -1,3 +1,4 @@
+import 'package:drawer_example_flutter/homeScreen.dart';
 import 'package:drawer_example_flutter/loginpage.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,12 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
             ),
             ListTile(
               leading: const Icon(Icons.search, size: 30.0),
