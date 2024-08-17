@@ -10,11 +10,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
-    // Add navigation logic here if needed
     print('Selected Index: $index');
   }
 
@@ -76,6 +85,38 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          SizedBox(height: 16), 
+          Container(
+            height: 150, 
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: PageView(
+              children: [
+                ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(20), 
+                  child: Image.network(
+                    'https://t4.ftcdn.net/jpg/02/61/01/87/360_F_261018762_f15Hmze7A0oL58Uwe7SrDKNS4fZIjLiF.jpg',
+                    fit: BoxFit.cover,
+                    width: MediaQuery.of(context)
+                        .size
+                        .width, // Full width of the screen
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(20), // Circular corner radius
+                  child: Image.network(
+                    'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
+                    fit: BoxFit.cover,
+                    width: MediaQuery.of(context)
+                        .size
+                        .width, // Full width of the screen
+                  ),
+                ),
+                // Add more images here if needed
+              ],
+            ),
+          ),
           const Expanded(
             child: Center(
               child: Text('Content Goes Here'),
@@ -94,8 +135,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Window',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            label: 'Reward',
+            icon: Icon(Icons.code),
+            label: 'Git',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
