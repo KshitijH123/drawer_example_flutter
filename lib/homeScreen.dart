@@ -9,6 +9,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  final PageController _pageController = PageController();
 
   @override
   void initState() {
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -85,35 +87,59 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          SizedBox(height: 16), 
+          SizedBox(height: 16),
           Container(
-            height: 150, 
+            height: 150,
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: PageView(
+              controller: _pageController,
               children: [
-                ClipRRect(
-                  borderRadius:
-                      BorderRadius.circular(20), 
-                  child: Image.network(
-                    'https://t4.ftcdn.net/jpg/02/61/01/87/360_F_261018762_f15Hmze7A0oL58Uwe7SrDKNS4fZIjLiF.jpg',
-                    fit: BoxFit.cover,
-                    width: MediaQuery.of(context)
-                        .size
-                        .width, // Full width of the screen
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.network(
+                      'https://t4.ftcdn.net/jpg/02/61/01/87/360_F_261018762_f15Hmze7A0oL58Uwe7SrDKNS4fZIjLiF.jpg',
+                      fit: BoxFit.cover,
+                      width: MediaQuery.of(context)
+                          .size
+                          .width, 
+                    ),
                   ),
                 ),
-                ClipRRect(
-                  borderRadius:
-                      BorderRadius.circular(20), // Circular corner radius
-                  child: Image.network(
-                    'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
-                    fit: BoxFit.cover,
-                    width: MediaQuery.of(context)
-                        .size
-                        .width, // Full width of the screen
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.network(
+                      'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
+                      fit: BoxFit.cover,
+                      width: MediaQuery.of(context)
+                          .size
+                          .width, 
+                    ),
                   ),
                 ),
-                // Add more images here if needed
               ],
             ),
           ),
