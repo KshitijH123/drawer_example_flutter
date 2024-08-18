@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context)
                           .size
-                          .width, // Full width of the screen
+                          .width, 
                     ),
                   ),
                 ),
@@ -160,13 +160,29 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   _buildButton('All'),
-                  SizedBox(width: 16), 
+                  SizedBox(width: 24),
                   _buildButton('Switches'),
-                  SizedBox(width: 16),
+                  SizedBox(width: 24),
                   _buildButton('Door Locks'),
-                  SizedBox(width: 16),
+                  SizedBox(width: 24),
                   _buildButton('Car Door'),
                 ],
+              ),
+            ),
+          ),
+          SizedBox(height: 8), 
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                'Recently Added',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color:
+                      Colors.black.withOpacity(0.7), 
+                ),
               ),
             ),
           ),
