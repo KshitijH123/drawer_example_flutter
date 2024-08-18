@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -121,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context)
                           .size
-                          .width, 
+                          .width, // Full width of the screen
                     ),
                   ),
                 ),
@@ -144,51 +145,79 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context)
                           .size
-                          .width, 
+                          .width, // Full width of the screen
                     ),
                   ),
                 ),
+                // Add more image containers here if needed
               ],
             ),
           ),
           SizedBox(height: 16),
+          // Row of buttons
           Container(
-            height: 50, 
+            height: 50, // Adjust height as needed
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   _buildButton('All'),
-                  SizedBox(width: 24),
+                  SizedBox(width: 16), // Adjust spacing between buttons
                   _buildButton('Switches'),
-                  SizedBox(width: 24),
+                  SizedBox(width: 16),
                   _buildButton('Door Locks'),
-                  SizedBox(width: 24),
+                  SizedBox(width: 16),
                   _buildButton('Car Door'),
+                  // Add more buttons here if needed
                 ],
               ),
             ),
           ),
-          SizedBox(height: 8), 
+          SizedBox(height: 8), // Space between buttons and the text
+          // Recently Added text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Recently Added',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color:
-                      Colors.black.withOpacity(0.7), 
-                ),
+            child: Text(
+              'Recently Added',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black.withOpacity(0.7), // Semi-transparent black
               ),
             ),
           ),
-          const Expanded(
-            child: Center(
-              child: Text('Content Goes Here'),
+          SizedBox(height: 16), // Space between the text and the grid
+          // Grid of cards
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // Two cards per row
+                  crossAxisSpacing: 16, // Space between cards horizontally
+                  mainAxisSpacing: 16, // Space between cards vertically
+                  childAspectRatio: 0.75, // Aspect ratio of card
+                ),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  String imageUrl;
+                  if (index == 1) {
+                    imageUrl =
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP41vK0SW0qeKY4DlLyO1OMdik6s40QZDx2w&s';
+                  } else if (index == 2) {
+                    imageUrl =
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLiN9VKip9sd9jSVJ_kKWXtGfqxd0Bp-Dpg&s';
+                  } else {
+                    imageUrl =
+                        'https://5.imimg.com/data5/SELLER/Default/2022/11/RC/AE/YF/43448572/penite-electric-switch-button-500x500.jpg';
+                  }
+                  return _buildCard(
+                    imageUrl: imageUrl,
+                    title: 'Electric Switch Button ${index + 1}',
+                  );
+                },
+              ),
             ),
           ),
         ],
@@ -232,12 +261,46 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(
               color: isSelected
                   ? Colors.red
-                  : Colors.black, 
+                  : Colors.black, // Text color changes on tap
               fontWeight: FontWeight.bold,
-              fontSize: 16, 
+              fontSize: 16, // Adjust font size as needed
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildCard({required String imageUrl, required String title}) {
+    return Card(
+      elevation: 5,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
