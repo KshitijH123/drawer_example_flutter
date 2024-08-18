@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context)
                           .size
-                          .width, // Full width of the screen
+                          .width, 
                     ),
                   ),
                 ),
@@ -145,25 +145,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context)
                           .size
-                          .width, // Full width of the screen
+                          .width, 
                     ),
                   ),
                 ),
-                // Add more image containers here if needed
               ],
             ),
           ),
           SizedBox(height: 16),
-          // Row of buttons
           Container(
-            height: 50, // Adjust height as needed
+            height: 50,
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   _buildButton('All'),
-                  SizedBox(width: 16), // Adjust spacing between buttons
+                  SizedBox(width: 16), 
                   _buildButton('Switches'),
                   SizedBox(width: 16),
                   _buildButton('Door Locks'),
@@ -174,30 +172,28 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          SizedBox(height: 8), // Space between buttons and the text
-          // Recently Added text
+          SizedBox(height: 8), 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
               'Recently Added',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.black.withOpacity(0.7), // Semi-transparent black
+                color: Colors.black.withOpacity(0.7), 
               ),
             ),
           ),
-          SizedBox(height: 16), // Space between the text and the grid
-          // Grid of cards
+          SizedBox(height: 16), 
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Two cards per row
-                  crossAxisSpacing: 16, // Space between cards horizontally
-                  mainAxisSpacing: 16, // Space between cards vertically
-                  childAspectRatio: 0.75, // Aspect ratio of card
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16, 
+                  mainAxisSpacing: 16, 
+                  childAspectRatio: 0.75, 
                 ),
                 itemCount: 6,
                 itemBuilder: (context, index) {
