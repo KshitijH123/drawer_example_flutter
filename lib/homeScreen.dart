@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
+  String? _selectedButtonLabel;
 
   @override
   void initState() {
@@ -27,6 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedIndex = index;
     });
     print('Selected Index: $index');
+  }
+
+  void _onButtonTapped(String label) {
+    setState(() {
+      _selectedButtonLabel = label;
+    });
+    print('Button Tapped: $label');
   }
 
   @override
@@ -113,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context)
                           .size
-                          .width, 
+                          .width, // Full width of the screen
                     ),
                   ),
                 ),
@@ -141,6 +149,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ],
+            ),
+          ),
+          SizedBox(height: 16),
+          Container(
+            height: 50, 
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  _buildButton('All'),
+                  SizedBox(width: 16), 
+                  _buildButton('Switches'),
+                  SizedBox(width: 16),
+                  _buildButton('Door Locks'),
+                  SizedBox(width: 16),
+                  _buildButton('Car Door'),
+                ],
+              ),
             ),
           ),
           const Expanded(
@@ -173,6 +200,28 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
+      ),
+    );
+  }
+
+  Widget _buildButton(String label) {
+    bool isSelected = _selectedButtonLabel == label;
+    return GestureDetector(
+      onTap: () => _onButtonTapped(label),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Center(
+          child: Text(
+            label,
+            style: TextStyle(
+              color: isSelected
+                  ? Colors.red
+                  : Colors.black, 
+              fontWeight: FontWeight.bold,
+              fontSize: 16, 
+            ),
+          ),
+        ),
       ),
     );
   }
