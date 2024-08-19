@@ -207,7 +207,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   } else if (index == 3) {
                     imageUrl =
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqTAJcpGGTvMEzWonXEQHjXjZIeVq5ng2jww&s';
-                  }else {
+                  } else if (index == 4) {
+                    imageUrl =
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU5rMkqq1UQX5-cZhozt5IolO6g4FWw9DWgg&s';
+                  } else if (index == 5) {
+                    imageUrl =
+                        'https://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=falsehttps://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=false';
+                  }
+                  else {
                     imageUrl =
                         'https://5.imimg.com/data5/SELLER/Default/2022/11/RC/AE/YF/43448572/penite-electric-switch-button-500x500.jpg';
                   }
