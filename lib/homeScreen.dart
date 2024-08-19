@@ -204,7 +204,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   } else if (index == 2) {
                     imageUrl =
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLiN9VKip9sd9jSVJ_kKWXtGfqxd0Bp-Dpg&s';
-                  } else {
+                  } else if (index == 3) {
+                    imageUrl =
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqTAJcpGGTvMEzWonXEQHjXjZIeVq5ng2jww&s';
+                  }else {
                     imageUrl =
                         'https://5.imimg.com/data5/SELLER/Default/2022/11/RC/AE/YF/43448572/penite-electric-switch-button-500x500.jpg';
                   }
