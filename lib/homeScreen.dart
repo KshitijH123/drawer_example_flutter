@@ -236,12 +236,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Map<String, String>> _getFilteredItems() {
     final allItems = [
-      {'title': 'Electric Switch Button 1', 'imageUrl': 'https://5.imimg.com/data5/SELLER/Default/2022/11/RC/AE/YF/43448572/penite-electric-switch-button-500x500.jpg', 'category': 'Switches', 'price': '\$10'},
-      {'title': 'Electric Switch Button 2', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP41vK0SW0qeKY4DlLyO1OMdik6s40QZDx2w&s', 'category': 'Switches', 'price': '\$12'},
-      {'title': 'Electric Switch Button 3', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLiN9VKip9sd9jSVJ_kKWXtGfqxd0Bp-Dpg&s', 'category': 'Door Locks', 'price': '\$15'},
-      {'title': 'Electric Switch Button 4', 'imageUrl': 'https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2022/09/12111755/car-door-parts-_-Body-2-12-9-22-1024x640.jpg', 'category': 'Car Door', 'price': '\$20'},
-      {'title': 'Electric Switch Button 5', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU5rMkqq1UQX5-cZhozt5IolO6g4FWw9DWgg&s', 'category': 'All', 'price': '\$25'},
-      {'title': 'Electric Switch Button 6', 'imageUrl': 'https://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=false', 'category': 'All', 'price': '\$30'},
+      {'title': 'Electric Switch Button 1', 'imageUrl': 'https://5.imimg.com/data5/SELLER/Default/2022/11/RC/AE/YF/43448572/penite-electric-switch-button-500x500.jpg', 'category': 'Switches', 'price': '\₹30'},
+      {'title': 'Electric Switch Button 2', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP41vK0SW0qeKY4DlLyO1OMdik6s40QZDx2w&s', 'category': 'Switches', 'price': '\₹100'},
+      {'title': 'Electric Switch Button 3', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLiN9VKip9sd9jSVJ_kKWXtGfqxd0Bp-Dpg&s', 'category': 'Door Locks', 'price': '\₹150'},
+      {'title': 'Electric Switch Button 4', 'imageUrl': 'https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2022/09/12111755/car-door-parts-_-Body-2-12-9-22-1024x640.jpg', 'category': 'Car Door', 'price': '\₹600'},
+      {'title': 'Electric Switch Button 5', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU5rMkqq1UQX5-cZhozt5IolO6g4FWw9DWgg&s', 'category': 'All', 'price': '\₹100'},
+      {'title': 'Electric Switch Button 6', 'imageUrl': 'https://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=false', 'category': 'All', 'price': '\₹980'},
     ];
 
     return _selectedButtonLabel == 'All'
