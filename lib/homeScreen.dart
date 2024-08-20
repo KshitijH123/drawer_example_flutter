@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
-  String? _selectedButtonLabel;
+  String _selectedButtonLabel = 'All'; 
 
   @override
   void initState() {
@@ -120,9 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Image.network(
                       'https://t4.ftcdn.net/jpg/02/61/01/87/360_F_261018762_f15Hmze7A0oL58Uwe7SrDKNS4fZIjLiF.jpg',
                       fit: BoxFit.cover,
-                      width: MediaQuery.of(context)
-                          .size
-                          .width, 
+                      width: MediaQuery.of(context).size.width,
                     ),
                   ),
                 ),
@@ -143,9 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Image.network(
                       'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
                       fit: BoxFit.cover,
-                      width: MediaQuery.of(context)
-                          .size
-                          .width, 
+                      width: MediaQuery.of(context).size.width,
                     ),
                   ),
                 ),
@@ -161,66 +157,48 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   _buildButton('All'),
-                  SizedBox(width: 16), 
+                  SizedBox(width: 16),
                   _buildButton('Switches'),
                   SizedBox(width: 16),
                   _buildButton('Door Locks'),
                   SizedBox(width: 16),
                   _buildButton('Car Door'),
-                  // Add more buttons here if needed
                 ],
               ),
             ),
           ),
-          SizedBox(height: 8), 
+          SizedBox(height: 14),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Recently Added',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black.withOpacity(0.7), 
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                'Recently Added',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black.withOpacity(0.7),
+                ),
               ),
             ),
           ),
-          SizedBox(height: 16), 
+          SizedBox(height: 16),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 16, 
-                  mainAxisSpacing: 16, 
-                  childAspectRatio: 0.75, 
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.75,
                 ),
-                itemCount: 6,
+                itemCount: _getFilteredItems().length,
                 itemBuilder: (context, index) {
-                  String imageUrl;
-                  if (index == 1) {
-                    imageUrl =
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP41vK0SW0qeKY4DlLyO1OMdik6s40QZDx2w&s';
-                  } else if (index == 2) {
-                    imageUrl =
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLiN9VKip9sd9jSVJ_kKWXtGfqxd0Bp-Dpg&s';
-                  } else if (index == 3) {
-                    imageUrl =
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqTAJcpGGTvMEzWonXEQHjXjZIeVq5ng2jww&s';
-                  } else if (index == 4) {
-                    imageUrl =
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU5rMkqq1UQX5-cZhozt5IolO6g4FWw9DWgg&s';
-                  } else if (index == 5) {
-                    imageUrl =
-                        'https://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=falsehttps://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=false';
-                  }
-                  else {
-                    imageUrl =
-                        'https://5.imimg.com/data5/SELLER/Default/2022/11/RC/AE/YF/43448572/penite-electric-switch-button-500x500.jpg';
-                  }
+                  final item = _getFilteredItems()[index];
                   return _buildCard(
-                    imageUrl: imageUrl,
-                    title: 'Electric Switch Button ${index + 1}',
+                    imageUrl: item['imageUrl']!,
+                    title: item['title']!,
                   );
                 },
               ),
@@ -255,21 +233,42 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildButton(String label) {
+  List<Map<String, String>> _getFilteredItems() {
+    final allItems = [
+      {'title': 'Electric Switch Button 1', 'imageUrl': 'https://5.imimg.com/data5/SELLER/Default/2022/11/RC/AE/YF/43448572/penite-electric-switch-button-500x500.jpg', 'category': 'Switches'},
+      {'title': 'Electric Switch Button 2', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP41vK0SW0qeKY4DlLyO1OMdik6s40QZDx2w&s', 'category': 'Switches'},
+      {'title': 'Electric Switch Button 3', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLiN9VKip9sd9jSVJ_kKWXtGfqxd0Bp-Dpg&s', 'category': 'Door Locks'},
+      {'title': 'Electric Switch Button 4', 'imageUrl': 'https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2022/09/12111755/car-door-parts-_-Body-2-12-9-22-1024x640.jpg', 'category': 'Car Door'},
+      {'title': 'Electric Switch Button 5', 'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU5rMkqq1UQX5-cZhozt5IolO6g4FWw9DWgg&s', 'category': 'All'},
+      {'title': 'Electric Switch Button 6', 'imageUrl': 'https://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=false', 'category': 'All'},
+    ];
+
+    return _selectedButtonLabel == 'All'
+        ? allItems
+        : allItems.where((item) => item['category'] == _selectedButtonLabel).toList();
+  }
+
+    Widget _buildButton(String label) {
     bool isSelected = _selectedButtonLabel == label;
     return GestureDetector(
       onTap: () => _onButtonTapped(label),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.red.withOpacity(0.1) : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: isSelected ? Colors.red : Colors.grey,
+            width: 2,
+          ),
+        ),
         child: Center(
           child: Text(
             label,
             style: TextStyle(
-              color: isSelected
-                  ? Colors.red
-                  : Colors.black, // Text color changes on tap
+              color: isSelected ? Colors.red : Colors.black,
               fontWeight: FontWeight.bold,
-              fontSize: 16, // Adjust font size as needed
+              fontSize: 16,
             ),
           ),
         ),
@@ -300,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               title,
-              style: TextStyle(
+              style:const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
