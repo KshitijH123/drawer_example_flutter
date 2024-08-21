@@ -241,6 +241,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   imageUrl: item['imageUrl']!,
                   title: item['title']!,
                   price: item['price']!,
+                  description: item['description']!,
+                  rating: item['rating']!,
                 );
               },
             ),
@@ -265,46 +267,64 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, String>> _getFilteredItems() {
     final allItems = [
       {
-        'title': 'Electric Switch Button ',
+        'title': 'Electric Switch Button',
         'imageUrl':
             'https://www.chinadaier.com/wp-content/uploads/2019/08/pro2.jpg',
         'category': 'Switches',
-        'price': '\₹30'
+        'price': '\₹30',
+        'description':
+            'AD2212 Round 12v DC 10A 250VAC Push Button On Off Switch for Electric Kids Car E-Bike Toys (Pack of 2, Multicolour).',
+        'rating': '4.6 Store Rating (603 reviews)',
       },
       {
-        'title': 'Electric Switch Button ',
+        'title': 'Electric Switch Button',
         'imageUrl':
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP41vK0SW0qeKY4DlLyO1OMdik6s40QZDx2w&s',
         'category': 'Switches',
-        'price': '\₹100'
+        'price': '\₹100',
+        'description':
+            'High-quality switch with durable design suitable for various applications.',
+        'rating': '4.8 Store Rating (150 reviews)',
       },
       {
-        'title': 'Door Lock                       ',
+        'title': 'Door Lock',
         'imageUrl':
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLiN9VKip9sd9jSVJ_kKWXtGfqxd0Bp-Dpg&s',
         'category': 'Door Locks',
-        'price': '\₹150'
+        'price': '\₹150',
+        'description':
+            'Door locks are mechanical devices that keep doors closed and secure. They can be opened with keys, electronic cards, or secret numbers.',
+        'rating': '4.7 Store Rating (200 reviews)',
       },
       {
-        'title': 'Car Door ',
+        'title': 'Car Door',
         'imageUrl':
             'https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2022/09/12111755/car-door-parts-_-Body-2-12-9-22-1024x640.jpg',
         'category': 'Car Door',
-        'price': '\₹600'
+        'price': '\₹600',
+        'description':
+            'Premium car door with robust build quality and sleek design.',
+        'rating': '4.5 Store Rating (300 reviews)',
       },
       {
-        'title': 'Radio Switch ',
+        'title': 'Radio Switch',
         'imageUrl':
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU5rMkqq1UQX5-cZhozt5IolO6g4FWw9DWgg&s',
         'category': 'All',
-        'price': '\₹100'
+        'price': '\₹100',
+        'description':
+            'Versatile radio switch with multiple settings and high durability.',
+        'rating': '4.4 Store Rating (250 reviews)',
       },
       {
         'title': 'Mobile Handler',
         'imageUrl':
             'https://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=false',
         'category': 'All',
-        'price': '\₹200'
+        'price': '\₹200',
+        'description':
+            'Adjustable mobile handler for secure and convenient phone holding.',
+        'rating': '4.3 Store Rating (180 reviews)',
       },
     ];
 
@@ -347,6 +367,8 @@ class _HomeScreenState extends State<HomeScreen> {
     required String imageUrl,
     required String title,
     required String price,
+    required String description,
+    required String rating,
   }) {
     return GestureDetector(
       onTap: () {
@@ -357,6 +379,8 @@ class _HomeScreenState extends State<HomeScreen> {
               imageUrl: imageUrl,
               title: title,
               price: price,
+              description: description,
+              rating: rating,
             ),
           ),
         );

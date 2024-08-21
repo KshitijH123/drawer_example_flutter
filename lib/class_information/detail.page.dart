@@ -4,11 +4,15 @@ class DetailPage extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String price;
+  final String description;
+  final String rating;
 
   const DetailPage({
     required this.imageUrl,
     required this.title,
     required this.price,
+    required this.description,
+    required this.rating,
     Key? key,
   }) : super(key: key);
 
@@ -20,12 +24,21 @@ class DetailPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
-              imageUrl,
-              fit: BoxFit.cover,
+            Container(
               width: double.infinity,
-              height: 300,
+              height: 250, 
+              child: ClipRRect(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(16), 
+                ),
+                child: Image.network(
+                  imageUrl,
+                  fit: BoxFit.contain, 
+                  width: double.infinity,
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -49,6 +62,21 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    rating,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ],
               ),
             ),
