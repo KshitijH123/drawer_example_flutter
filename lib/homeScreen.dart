@@ -1,5 +1,5 @@
-import 'package:drawer_example_flutter/class_information/detail.page.dart';
 import 'package:flutter/material.dart';
+import 'package:drawer_example_flutter/class_information/detail.page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -257,7 +257,31 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildRewardsScreen() {
-    return Center(child: Text('Rewards Screen'));
+    return Center(
+      child: Container(
+        width: 200,
+        height: 200,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Center(
+          child: Icon(
+            Icons.qr_code_scanner,
+            size: 100,
+            color: Colors.blue,
+          ),
+        ),
+      ),
+    );
   }
 
   Widget _buildProfileScreen() {
