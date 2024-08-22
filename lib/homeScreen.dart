@@ -1,4 +1,3 @@
-import 'package:drawer_example_flutter/scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
 
@@ -258,8 +257,45 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 Widget _buildRewardsScreen() {
-      return Center(child: Text('Reward Screen'));
-
+     return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 80,
+            backgroundColor: Colors.blueAccent.withOpacity(0.2),
+            child: Icon(
+              Icons.qr_code_scanner,
+              size: 80,
+              color: Colors.blueAccent,
+            ),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Scan QR Code',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 30), 
+          Container(
+            padding: EdgeInsets.all(16), 
+            color: Colors.redAccent, 
+            child: Text(
+              '🎁 Get Your Reward Here 🎁',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign:
+                  TextAlign.center, 
+            ),
+          ),
+        ],
+      ),
+    );
 }
 
   Widget _buildProfileScreen() {
