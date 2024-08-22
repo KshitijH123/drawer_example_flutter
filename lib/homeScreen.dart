@@ -317,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
         'rating': '4.4 Store Rating (250 reviews)',
       },
       {
-        'title': 'Mobile Handler',
+        'title': 'Mobile Holder',
         'imageUrl':
             'https://rukminim2.flixcart.com/image/400/400/xif0q/car-cradle/clip/a/n/n/igrip-telescopic-one-touch-amkette-original-imagqhhn9guzgyzc.jpeg?q=90&crop=false',
         'category': 'All',
