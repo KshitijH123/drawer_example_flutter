@@ -256,31 +256,53 @@ class _HomeScreenState extends State<HomeScreen> {
     return Center(child: Text('Categories Screen'));
   }
 
-  Widget _buildRewardsScreen() {
-    return Center(
-      child: Container(
-        width: 200,
-        height: 200,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.3),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
+ 
+ Widget _buildRewardsScreen() {
+    return Column(
+      children: [
+        Container(
+          color: Colors.red,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          child: Text(
+            'Get Your Reward Guaranteed 👇',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
-          ],
-        ),
-        child: Center(
-          child: Icon(
-            Icons.qr_code_scanner,
-            size: 100,
-            color: Colors.blue,
+            textAlign: TextAlign.center,
           ),
         ),
-      ),
+        
+        SizedBox(height: 16), 
+        Expanded(
+          child: Center(
+            child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Icon(
+                  Icons.qr_code_scanner,
+                  size: 100,
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
