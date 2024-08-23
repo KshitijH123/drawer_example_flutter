@@ -309,7 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
  Widget _buildProfileScreen() {
     return Center(
       child: Container(
-        color: Colors.black12,
+        color: Colors.white54,
         width: double.infinity,
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -334,41 +334,65 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
- Widget _buildProfileCard() {
+Widget _buildProfileCard() {
     return Card(
       elevation: 5,
       margin: EdgeInsets.all(16.0),
-      child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: NetworkImage(
-                  'https://www.pngitem.com/pimgs/m/504-5040528_empty-profile-picture-png-transparent-png.png'),
+      child: Stack(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage(
+                      'https://i.pinimg.com/custom_covers/200x150/85498161615209203_1636332751.jpg'),
+                ),
+                SizedBox(height: 8.0),
+                Text(
+                  'Kshitij Hapase',
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Text(
+                  'GOLD    12000 POINTS',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.pink,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                LinearProgressIndicator(
+                  value: 0.7,
+                  minHeight: 5.0,
+                  backgroundColor: Colors.grey[200],
+                  color: Colors.yellow,
+                ),
+              ],
             ),
-            SizedBox(height: 8.0),
-            Text(
-              'Kshitij Hapase',
-              style: TextStyle(
-                fontSize: 22.0,
-                fontWeight: FontWeight.bold,
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: IconButton(
+                icon: Icon(Icons.edit_outlined),
+                onPressed: () {
+                },
               ),
             ),
-            SizedBox(height: 8.0),
-            LinearProgressIndicator(
-              value: 0.7,
-              minHeight: 5.0,
-              backgroundColor: Colors.grey[200],
-              color: Colors.blue,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
+
 
 
   Widget _buildRow(String text, IconData icon) {
@@ -380,13 +404,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(
             text,
             style: TextStyle(
-              fontSize: 22.0,
+              fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),
           ),
           Icon(
             icon,
-            size: 30,
+            size: 24,
           ),
         ],
       ),
