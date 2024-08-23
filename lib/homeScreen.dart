@@ -1,3 +1,4 @@
+import 'package:drawer_example_flutter/qr_scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
 
@@ -72,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           _buildHomeScreen(),
           _buildCategoriesScreen(),
-          _buildRewardsScreen(),
+          _buildRewardsScreen(context),
           _buildProfileScreen(),
         ],
       ),
@@ -256,18 +257,26 @@ class _HomeScreenState extends State<HomeScreen> {
     return Center(child: Text('Categories Screen'));
   }
 
-Widget _buildRewardsScreen() {
-     return Center(
+Widget _buildRewardsScreen(BuildContext context) {
+    return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircleAvatar(
-            radius: 80,
-            backgroundColor: Colors.blueAccent.withOpacity(0.2),
-            child: Icon(
-              Icons.qr_code_scanner,
-              size: 80,
-              color: Colors.blueAccent,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QRScannerScreen()),
+              );
+            },
+            child: CircleAvatar(
+              radius: 80,
+              backgroundColor: Colors.blueAccent.withOpacity(0.2),
+              child: Icon(
+                Icons.qr_code_scanner,
+                size: 80,
+                color: Colors.blueAccent,
+              ),
             ),
           ),
           SizedBox(height: 20),
@@ -278,10 +287,10 @@ Widget _buildRewardsScreen() {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 30), 
+          SizedBox(height: 30),
           Container(
-            padding: EdgeInsets.all(16), 
-            color: Colors.redAccent, 
+            padding: EdgeInsets.all(16),
+            color: Colors.redAccent,
             child: Text(
               '🎁 Get Your Reward Here 🎁',
               style: TextStyle(
@@ -289,14 +298,13 @@ Widget _buildRewardsScreen() {
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
-              textAlign:
-                  TextAlign.center, 
+              textAlign: TextAlign.center,
             ),
           ),
         ],
       ),
     );
-}
+  }
 
   Widget _buildProfileScreen() {
     return Center(child: Text('Profile Screen'));
