@@ -352,7 +352,7 @@ Widget _buildProfileCard() {
                 CircleAvatar(
                   radius: 50,
                   backgroundImage: NetworkImage(
-                      'https://i.pinimg.com/custom_covers/200x150/85498161615209203_1636332751.jpg'),
+                      'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png'),
                 ),
                 SizedBox(height: 8.0),
                 Text(
