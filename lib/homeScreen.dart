@@ -296,11 +296,11 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             child: CircleAvatar(
-              radius: 80,
+              radius: 120,
               backgroundColor: Colors.blueAccent.withOpacity(0.2),
               child: Icon(
                 Icons.qr_code_scanner,
-                size: 80,
+                size: 120,
                 color: Colors.blueAccent,
               ),
             ),
