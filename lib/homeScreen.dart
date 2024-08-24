@@ -97,138 +97,143 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.red[600],
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
       ),
     );
   }
 
-  Widget _buildHomeScreen() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  spreadRadius: 2,
-                  blurRadius: 5,
-                  offset: const Offset(0, 3),
+ Widget _buildHomeScreen() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  hintText: 'Search',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: BorderSide.none,
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  prefixIcon: const Icon(Icons.search),
                 ),
-              ],
-            ),
-            child: TextFormField(
-              decoration: InputDecoration(
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                hintText: 'Search',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: Colors.white,
-                prefixIcon: const Icon(Icons.search),
               ),
             ),
           ),
-        ),
-        SizedBox(height: 16),
-        Container(
-          height: 150,
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: PageView(
-            controller: _pageController,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.network(
-                    'https://t4.ftcdn.net/jpg/02/61/01/87/360_F_261018762_f15Hmze7A0oL58Uwe7SrDKNS4fZIjLiF.jpg',
-                    fit: BoxFit.cover,
-                    width: MediaQuery.of(context).size.width,
-                  ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.network(
-                    'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
-                    fit: BoxFit.cover,
-                    width: MediaQuery.of(context).size.width,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 16),
-        Container(
-          height: 50,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
+          SizedBox(height: 16),
+          Container(
+            height: 150,
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: PageView(
+              controller: _pageController,
               children: [
-                _buildButton('All'),
-                SizedBox(width: 16),
-                _buildButton('Switches'),
-                SizedBox(width: 16),
-                _buildButton('Door Locks'),
-                SizedBox(width: 16),
-                _buildButton('Car Door'),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.network(
+                      'https://t4.ftcdn.net/jpg/02/61/01/87/360_F_261018762_f15Hmze7A0oL58Uwe7SrDKNS4fZIjLiF.jpg',
+                      fit: BoxFit.cover,
+                      width: MediaQuery.of(context).size.width,
+                    ),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.network(
+                      'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
+                      fit: BoxFit.cover,
+                      width: MediaQuery.of(context).size.width,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
-        ),
-        SizedBox(height: 14),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: Text(
-              'Recently Added',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black.withOpacity(0.7),
+          SizedBox(height: 16),
+          Container(
+            height: 50,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  _buildButton('All'),
+                  SizedBox(width: 16),
+                  _buildButton('Switches'),
+                  SizedBox(width: 16),
+                  _buildButton('Door Locks'),
+                  SizedBox(width: 16),
+                  _buildButton('Car Door'),
+                ],
               ),
             ),
           ),
-        ),
-        SizedBox(height: 16),
-        Expanded(
-          child: Padding(
+          SizedBox(height: 14),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                'Recently Added',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black.withOpacity(0.7),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 16),
+          // The grid view should be inside the singlechildscrollview to make it scrollable
+          Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.builder(
+              shrinkWrap:
+                  true, // This is crucial for the grid view to work within the scroll view
+              physics:
+                  NeverScrollableScrollPhysics(), // Disable scroll of the grid view to allow scrolling in SingleChildScrollView
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 16,
@@ -248,8 +253,8 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -360,7 +365,7 @@ Widget _buildProfileCard() {
                 ),
                 SizedBox(height: 8.0),
                 Text(
-                  'GOLD    12000 POINTS',
+                  'GOLD    1200 POINTS',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.pink,
