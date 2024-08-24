@@ -226,14 +226,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: 16),
-          // The grid view should be inside the singlechildscrollview to make it scrollable
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.builder(
               shrinkWrap:
-                  true, // This is crucial for the grid view to work within the scroll view
+                  true, 
               physics:
-                  NeverScrollableScrollPhysics(), // Disable scroll of the grid view to allow scrolling in SingleChildScrollView
+                  NeverScrollableScrollPhysics(), 
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 16,
@@ -262,11 +261,33 @@ class _HomeScreenState extends State<HomeScreen> {
     return Center(child: Text('Categories Screen'));
   }
 
-  Widget _buildRewardsScreen(BuildContext context) {
+ Widget _buildRewardsScreen(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            padding: EdgeInsets.all(16),
+            color: Colors.redAccent,
+            child: Text(
+              '🎁 Get Your Reward Here 🎁',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Scan QR Code',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 20),
           GestureDetector(
             onTap: () {
               Navigator.push(
@@ -282,28 +303,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 size: 80,
                 color: Colors.blueAccent,
               ),
-            ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            'Scan QR Code',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 30),
-          Container(
-            padding: EdgeInsets.all(16),
-            color: Colors.redAccent,
-            child: Text(
-              '🎁 Get Your Reward Here 🎁',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
             ),
           ),
         ],
