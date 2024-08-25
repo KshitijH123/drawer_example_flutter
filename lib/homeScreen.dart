@@ -356,63 +356,83 @@ class _HomeScreenState extends State<HomeScreen> {
  
   }
 
-  Widget _buildProfileCard() {
-    return Card(
-      elevation: 5,
-      margin: EdgeInsets.all(16.0),
-      child: Stack(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(
-                      'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png'),
+Widget _buildProfileCard() {
+    return Stack(
+      clipBehavior: Clip.none, 
+      children: [
+        Card(
+          elevation: 5,
+          margin: EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundImage: NetworkImage(
+                          'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png'),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'Kshitij Hapase',
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'GOLD    1200 POINTS',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.pink,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    LinearProgressIndicator(
+                      value: 0.7,
+                      minHeight: 5.0,
+                      backgroundColor: Colors.grey[200],
+                      color: Colors.yellow,
+                    ),
+                  ],
                 ),
-                SizedBox(height: 8.0),
-                Text(
-                  'Kshitij Hapase',
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 8.0),
-                Text(
-                  'GOLD    1200 POINTS',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.pink,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 8.0),
-                LinearProgressIndicator(
-                  value: 0.7,
-                  minHeight: 5.0,
-                  backgroundColor: Colors.grey[200],
-                  color: Colors.yellow,
-                ),
-              ],
-            ),
-          ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: IconButton(
-                icon: Icon(Icons.edit_outlined),
-                onPressed: () {},
               ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: -20, 
+          left: 16.0,
+          right: 16.0,
+          child: Text(
+            'Account',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black, 
             ),
           ),
-        ],
-      ),
+        ),
+        Positioned(
+          top: 8.0,
+          right: 8.0,
+          child: IconButton(
+            icon: Icon(Icons.edit_outlined),
+            onPressed: () {},
+          ),
+        ),
+      ],
     );
   }
+
+
+
 
   Widget _buildRow(String text, IconData icon) {
     return Container(

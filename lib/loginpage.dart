@@ -24,75 +24,81 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(
           title: Text('Login Page'),
         ),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const CircleAvatar(
-                      backgroundImage:
-                          AssetImage('assets/images/new_profile.png'),
-                      radius: 100,
-                    ),
-                    const SizedBox(height: 30),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: TextFormField(
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: const InputDecoration(
-                          labelText: 'Email',
-                          hintText: 'Enter email',
-                          prefixIcon: Icon(Icons.email),
-                          border: OutlineInputBorder(),
-                        ),
-                        validator: (value) {
-                          return value!.isEmpty
-                              ? 'Please enter an email'
-                              : null;
-                        },
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SingleChildScrollView(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width -
+                      32, // Ensure proper width
+                ),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/new_profile.png'),
+                        radius: 100,
                       ),
-                    ),
-                    const SizedBox(height: 30),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: TextFormField(
-                        controller: passwordController,
-                        keyboardType: TextInputType.visiblePassword,
-                        decoration: const InputDecoration(
-                          labelText: 'Password',
-                          hintText: 'Enter password',
-                          prefixIcon: Icon(Icons.lock),
-                          border: OutlineInputBorder(),
-                        ),
-                        obscureText: true,
-                        validator: (value) {
-                          return value!.isEmpty
-                              ? 'Please enter a password'
-                              : null;
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                    MaterialButton(
-                      onPressed: validateForm,
-                      child: Text(
-                        'Login',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
+                      const SizedBox(height: 30),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: TextFormField(
+                          controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: const InputDecoration(
+                            labelText: 'Email',
+                            hintText: 'Enter email',
+                            prefixIcon: Icon(Icons.email),
+                            border: OutlineInputBorder(),
+                          ),
+                          validator: (value) {
+                            return value!.isEmpty
+                                ? 'Please enter an email'
+                                : null;
+                          },
                         ),
                       ),
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                    ),
-                    const SizedBox(height: 20),
-                    Text('Forgot Password?'),
-                  ],
+                      const SizedBox(height: 30),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: TextFormField(
+                          controller: passwordController,
+                          keyboardType: TextInputType.visiblePassword,
+                          decoration: const InputDecoration(
+                            labelText: 'Password',
+                            hintText: 'Enter password',
+                            prefixIcon: Icon(Icons.lock),
+                            border: OutlineInputBorder(),
+                          ),
+                          obscureText: true,
+                          validator: (value) {
+                            return value!.isEmpty
+                                ? 'Please enter a password'
+                                : null;
+                          },
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      MaterialButton(
+                        onPressed: validateForm,
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        color: Colors.blue,
+                        textColor: Colors.white,
+                      ),
+                      const SizedBox(height: 20),
+                      Text('Forgot Password?'),
+                    ],
+                  ),
                 ),
               ),
             ),
