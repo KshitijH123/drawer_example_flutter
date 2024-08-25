@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
- Widget _buildHomeScreen() {
+  Widget _buildHomeScreen() {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,10 +229,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.builder(
-              shrinkWrap:
-                  true, 
-              physics:
-                  NeverScrollableScrollPhysics(), 
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 16,
@@ -261,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Center(child: Text('Categories Screen'));
   }
 
- Widget _buildRewardsScreen(BuildContext context) {
+  Widget _buildRewardsScreen(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -320,15 +318,33 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildProfileCard(),
-            SizedBox(
-                height:
-                    16.0), 
-            _buildRow('My Order', Icons.shopping_cart_outlined),
-            _buildRow('My Favorite', Icons.favorite_border_outlined),
-            _buildRow('Credit & Coupons', Icons.card_membership),
-            _buildRow('Shipping Address', Icons.location_on_outlined),
-            _buildRow('Account Settings', Icons.settings_outlined),
-            _buildRow('Log Out', Icons.logout),
+            SizedBox(height: 16.0),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), 
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  _buildRow('My Order', Icons.shopping_cart_outlined),
+                  _buildRow('My Favorite', Icons.favorite_border_outlined),
+                  _buildRow('Credit & Coupons', Icons.card_membership),
+                  _buildRow('Shipping Address', Icons.location_on_outlined),
+                  _buildRow('Account Settings', Icons.settings_outlined),
+                  _buildRow('Log Out', Icons.logout),
+                ],
+              ),
+            ),
+            SizedBox(height: 16.0),
             Padding(
               padding: const EdgeInsets.all(2.0),
               child: Text('Terms & conditions'),
@@ -338,7 +354,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-Widget _buildProfileCard() {
+
+  Widget _buildProfileCard() {
     return Card(
       elevation: 5,
       margin: EdgeInsets.all(16.0),
@@ -387,8 +404,7 @@ Widget _buildProfileCard() {
               padding: EdgeInsets.all(8.0),
               child: IconButton(
                 icon: Icon(Icons.edit_outlined),
-                onPressed: () {
-                },
+                onPressed: () {},
               ),
             ),
           ),
@@ -396,8 +412,6 @@ Widget _buildProfileCard() {
       ),
     );
   }
-
-
 
   Widget _buildRow(String text, IconData icon) {
     return Container(
@@ -420,7 +434,6 @@ Widget _buildProfileCard() {
       ),
     );
   }
-
 
 
   List<Map<String, String>> _getFilteredItems() {
