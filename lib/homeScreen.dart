@@ -329,7 +329,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.grey.withOpacity(0.3),
                     spreadRadius: 2,
                     blurRadius: 5,
-                    offset: Offset(0, 3), 
+                    offset: Offset(0, 3),
                   ),
                 ],
               ),
@@ -353,6 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+ 
   }
 
   Widget _buildProfileCard() {
@@ -434,7 +435,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
 
   List<Map<String, String>> _getFilteredItems() {
     final allItems = [
