@@ -73,7 +73,7 @@ class _EditProfileState extends State<EditProfile> {
         title: const Text('Edit Profile'),
         backgroundColor: Colors.blue,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,7 +158,7 @@ class _EditProfileState extends State<EditProfile> {
               focusNode: _emailFocusNode,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
+                  borderSide: BorderSide(color: _emailBorderColor),
                 ),
                 hintText: 'Enter your email address',
               ),
@@ -177,7 +177,7 @@ class _EditProfileState extends State<EditProfile> {
               focusNode: _phoneFocusNode,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
+                  borderSide: BorderSide(color: _phoneBorderColor),
                 ),
                 hintText: 'Enter your phone number',
               ),
@@ -196,7 +196,7 @@ class _EditProfileState extends State<EditProfile> {
               focusNode: _accountTypeFocusNode,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
+                  borderSide: BorderSide(color: _accountTypeBorderColor),
                 ),
                 hintText: 'Enter your account type',
               ),
