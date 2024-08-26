@@ -180,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(40),
                     child: Image.network(
                       'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
                       fit: BoxFit.cover,
@@ -335,12 +335,45 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Column(
                 children: [
-                  _buildRow('My Order', Icons.shopping_cart_outlined),
-                  _buildRow('My Favorite', Icons.favorite_border_outlined),
-                  _buildRow('Credit & Coupons', Icons.card_membership),
-                  _buildRow('Shipping Address', Icons.location_on_outlined),
-                  _buildRow('Account Settings', Icons.settings_outlined),
-                  _buildRow('Log Out', Icons.logout),
+                  InkWell(
+                    onTap: () {
+                      print('My Order tapped');
+                    },
+                    child: _buildRow('My Order', Icons.shopping_cart_outlined),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('My Favorite tapped');
+                    },
+                    child: _buildRow(
+                        'My Favorite', Icons.favorite_border_outlined),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('Credit & Coupons tapped');
+                    },
+                    child: _buildRow('Credit & Coupons', Icons.card_membership),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('Shipping Address tapped');
+                    },
+                    child: _buildRow(
+                        'Shipping Address', Icons.location_on_outlined),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('Account Settings tapped');
+                    },
+                    child:
+                        _buildRow('Account Settings', Icons.settings_outlined),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('Log Out tapped');
+                    },
+                    child: _buildRow('Log Out', Icons.logout),
+                  ),
                 ],
               ),
             ),
@@ -353,8 +386,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
- 
   }
+
+
 
 Widget _buildProfileCard() {
     return Stack(
@@ -415,7 +449,7 @@ Widget _buildProfileCard() {
             style: TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
-              color: Colors.black, 
+              color: Colors.blueGrey, 
             ),
           ),
         ),
