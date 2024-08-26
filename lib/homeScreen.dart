@@ -1,4 +1,5 @@
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
+import 'package:drawer_example_flutter/edit_profile.dart';
 import 'package:drawer_example_flutter/qr_scanner.dart';
 import 'package:flutter/material.dart';
 
@@ -458,7 +459,12 @@ Widget _buildProfileCard() {
           right: 8.0,
           child: IconButton(
             icon: Icon(Icons.edit_outlined),
-            onPressed: () {},
+            onPressed: () {
+           Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => EditProfile()),
+              );
+            },
           ),
         ),
       ],
