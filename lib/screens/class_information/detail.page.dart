@@ -8,13 +8,13 @@ class DetailPage extends StatelessWidget {
   final String rating;
 
   const DetailPage({
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.price,
     required this.description,
     required this.rating,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +26,16 @@ class DetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
-              height: 250, 
+              height: 250,
               child: ClipRRect(
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(16), 
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(16),
                 ),
                 child: Image.network(
                   imageUrl,
-                  fit: BoxFit.contain, 
+                  fit: BoxFit.contain,
                   width: double.infinity,
                 ),
               ),
@@ -52,16 +52,16 @@ class DetailPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     price,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       color: Colors.green,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Text(
                     description,
                     style: const TextStyle(
@@ -69,7 +69,7 @@ class DetailPage extends StatelessWidget {
                       color: Colors.black87,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Text(
                     rating,
                     style: const TextStyle(

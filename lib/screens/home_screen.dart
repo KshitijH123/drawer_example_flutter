@@ -1,8 +1,9 @@
-import 'package:drawer_example_flutter/shipping_address.dart';
-import 'package:drawer_example_flutter/class_information/detail.page.dart';
-import 'package:drawer_example_flutter/edit_profile.dart';
-import 'package:drawer_example_flutter/qr_scanner.dart';
+import 'package:drawer_example_flutter/screens/shipping_address.dart';
+import 'package:drawer_example_flutter/screens/edit_profile.dart';
+import 'package:drawer_example_flutter/screens/qr_scanner.dart';
 import 'package:flutter/material.dart';
+
+import 'class_information/detail.page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
