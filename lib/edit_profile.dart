@@ -80,7 +80,7 @@ class _EditProfileState extends State<EditProfile> {
       body: Stack(
         children: [
           Container(
-            color: Colors.red, 
+            color: Colors.red,
             height: backgroundHeight,
             width: double.infinity,
           ),
@@ -90,14 +90,12 @@ class _EditProfileState extends State<EditProfile> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: circleAvatarRadius * 2 +
-                      padding, 
+                  height: circleAvatarRadius * 2 + padding,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Stack(
-                        clipBehavior: Clip
-                            .none, 
+                        clipBehavior: Clip.none,
                         children: [
                           CircleAvatar(
                             radius: circleAvatarRadius,
@@ -107,8 +105,7 @@ class _EditProfileState extends State<EditProfile> {
                             backgroundColor: Colors.grey[200],
                           ),
                           Positioned(
-                            bottom:
-                                10, 
+                            bottom: 10,
                             right: 4,
                             child: Container(
                               padding: const EdgeInsets.all(3.0),
@@ -142,14 +139,13 @@ class _EditProfileState extends State<EditProfile> {
                 const Center(
                   child: Text('Edit Profile'),
                 ),
-                const SizedBox(
-                    height: 30.0), 
-
+                const SizedBox(height: 30.0),
                 const Text(
                   'Full Name',
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w500,
+                    color: Colors.grey,
                   ),
                 ),
                 const SizedBox(height: 8.0),
@@ -158,9 +154,14 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _nameFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(10.0), 
                       borderSide: BorderSide(color: _nameBorderColor),
                     ),
                     hintText: 'Enter your full name',
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 12.0), 
                   ),
                 ),
                 const SizedBox(height: 20.0),
@@ -168,7 +169,8 @@ class _EditProfileState extends State<EditProfile> {
                   'Email Address',
                   style: TextStyle(
                     fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
                   ),
                 ),
                 const SizedBox(height: 8.0),
@@ -177,9 +179,14 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _emailFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(10.0),
                       borderSide: BorderSide(color: _emailBorderColor),
                     ),
                     hintText: 'Enter your email address',
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 12.0), 
                   ),
                 ),
                 const SizedBox(height: 20.0),
@@ -187,7 +194,8 @@ class _EditProfileState extends State<EditProfile> {
                   'Phone Number',
                   style: TextStyle(
                     fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
                   ),
                 ),
                 const SizedBox(height: 8.0),
@@ -196,9 +204,14 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _phoneFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(10.0), 
                       borderSide: BorderSide(color: _phoneBorderColor),
                     ),
                     hintText: 'Enter your phone number',
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 12.0), 
                   ),
                 ),
                 const SizedBox(height: 20.0),
@@ -206,7 +219,8 @@ class _EditProfileState extends State<EditProfile> {
                   'Account Type',
                   style: TextStyle(
                     fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
                   ),
                 ),
                 const SizedBox(height: 8.0),
@@ -215,9 +229,14 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _accountTypeFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(10.0), 
                       borderSide: BorderSide(color: _accountTypeBorderColor),
                     ),
                     hintText: 'Enter your account type',
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 12.0), 
                   ),
                 ),
               ],
