@@ -1,3 +1,4 @@
+import 'package:drawer_example_flutter/shipping_address.dart';
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
 import 'package:drawer_example_flutter/edit_profile.dart';
 import 'package:drawer_example_flutter/qr_scanner.dart';
@@ -357,7 +358,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      print('Shipping Address tapped');
+                       Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ShippingAddress()),
+                      );
                     },
                     child: _buildRow(
                         'Shipping Address', Icons.location_on_outlined),
