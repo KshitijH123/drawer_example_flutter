@@ -9,8 +9,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController =
+      TextEditingController(text: 'kshitijhapase@gmail.com');
+
+  final TextEditingController passwordController =
+      TextEditingController(text: 'Kshitij@123');
+
   final _formKey = GlobalKey<FormState>();
 
   final String email = 'kshitijhapase@gmail.com';

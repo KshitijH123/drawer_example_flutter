@@ -1,4 +1,4 @@
-import 'package:drawer_example_flutter/editaddress_page.dart';
+import 'package:drawer_example_flutter/screens/edit_address_page.dart';
 import 'package:flutter/material.dart';
 
 class ShippingAddress extends StatefulWidget {
