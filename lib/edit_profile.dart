@@ -68,141 +68,162 @@ class _EditProfileState extends State<EditProfile> {
 
   @override
   Widget build(BuildContext context) {
+    final double circleAvatarRadius = 70;
+    final double padding = 16;
+    final double backgroundHeight = circleAvatarRadius + padding * 2;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit Profile'),
-        backgroundColor: Colors.blue,
+        title: const Text(''),
+        backgroundColor: Colors.red,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.red, 
+            height: backgroundHeight,
+            width: double.infinity,
+          ),
+          SingleChildScrollView(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: 70,
-                      backgroundImage: const NetworkImage(
-                        'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png',
+                SizedBox(
+                  height: circleAvatarRadius * 2 +
+                      padding, 
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Stack(
+                        clipBehavior: Clip
+                            .none, 
+                        children: [
+                          CircleAvatar(
+                            radius: circleAvatarRadius,
+                            backgroundImage: const NetworkImage(
+                              'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png',
+                            ),
+                            backgroundColor: Colors.grey[200],
+                          ),
+                          Positioned(
+                            bottom:
+                                10, 
+                            right: 4,
+                            child: Container(
+                              padding: const EdgeInsets.all(3.0),
+                              decoration: const BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.camera_alt,
+                                color: Colors.blueGrey,
+                                size: 24.0,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      backgroundColor: Colors.grey[200],
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                const Center(
+                  child: Text(
+                    'Kshitij Hapase',
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.w400,
                     ),
-                    Positioned(
-                      bottom: 5,
-                      right: 4,
-                      child: Container(
-                        padding: const EdgeInsets.all(3.0),
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.camera_alt,
-                          color: Colors.blueGrey,
-                          size: 24.0,
-                        ),
-                      ),
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                const Center(
+                  child: Text('Edit Profile'),
+                ),
+                const SizedBox(
+                    height: 30.0), 
+
+                const Text(
+                  'Full Name',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                TextFormField(
+                  controller: _nameController,
+                  focusNode: _nameFocusNode,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: _nameBorderColor),
                     ),
-                  ],
+                    hintText: 'Enter your full name',
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                const Text(
+                  'Email Address',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                TextFormField(
+                  controller: _emailController,
+                  focusNode: _emailFocusNode,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: _emailBorderColor),
+                    ),
+                    hintText: 'Enter your email address',
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                const Text(
+                  'Phone Number',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                TextFormField(
+                  controller: _phoneController,
+                  focusNode: _phoneFocusNode,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: _phoneBorderColor),
+                    ),
+                    hintText: 'Enter your phone number',
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                const Text(
+                  'Account Type',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                TextFormField(
+                  controller: _accountTypeController,
+                  focusNode: _accountTypeFocusNode,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: _accountTypeBorderColor),
+                    ),
+                    hintText: 'Enter your account type',
+                  ),
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
-            const Center(
-              child: Text(
-                'Kshitij Hapase',
-                style: TextStyle(
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            const Center(
-              child: Text('Edit Profile'),
-            ),
-            const SizedBox(height: 30.0), // Increased space before new section
-
-            const Text(
-              'Full Name',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            TextFormField(
-              controller: _nameController,
-              focusNode: _nameFocusNode,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: _nameBorderColor),
-                ),
-                hintText: 'Enter your full name',
-              ),
-            ),
-            const SizedBox(height: 20.0),
-            const Text(
-              'Email Address',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            TextFormField(
-              controller: _emailController,
-              focusNode: _emailFocusNode,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: _emailBorderColor),
-                ),
-                hintText: 'Enter your email address',
-              ),
-            ),
-            const SizedBox(height: 20.0),
-            const Text(
-              'Phone Number',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            TextFormField(
-              controller: _phoneController,
-              focusNode: _phoneFocusNode,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: _phoneBorderColor),
-                ),
-                hintText: 'Enter your phone number',
-              ),
-            ),
-            const SizedBox(height: 20.0),
-            const Text(
-              'Account Type',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            TextFormField(
-              controller: _accountTypeController,
-              focusNode: _accountTypeFocusNode,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: _accountTypeBorderColor),
-                ),
-                hintText: 'Enter your account type',
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
