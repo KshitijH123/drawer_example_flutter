@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: const InputDecoration(
                             labelText: 'Email',
                             hintText: 'Enter email',
-                            prefixIcon: Icon(Icons.email),
+                            prefixIcon: Icon(Icons.email_outlined),
                             border: OutlineInputBorder(),
                           ),
                           validator: (value) {
@@ -73,12 +73,12 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: InputDecoration(
                             labelText: 'Password',
                             hintText: 'Enter password',
-                            prefixIcon: Icon(Icons.lock),
+                            prefixIcon: const Icon(Icons.lock_outline),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _obscurePassword
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
                               ),
                               onPressed: () {
                                 setState(() {
