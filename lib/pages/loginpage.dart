@@ -16,13 +16,15 @@ class _LoginPageState extends State<LoginPage> {
   final String email = 'kshitijhapase@gmail.com';
   final String password = 'Kshitij@123';
 
+  bool _obscurePassword = true;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Login Page'),
+          title: const Text('Login Page'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -30,8 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Center(
               child: ConstrainedBox(
                 constraints: BoxConstraints(
-                  maxWidth: MediaQuery.of(context).size.width -
-                      32, // Ensure proper width
+                  maxWidth: MediaQuery.of(context).size.width - 32,
                 ),
                 child: Form(
                   key: _formKey,
@@ -68,13 +69,25 @@ class _LoginPageState extends State<LoginPage> {
                         child: TextFormField(
                           controller: passwordController,
                           keyboardType: TextInputType.visiblePassword,
-                          decoration: const InputDecoration(
+                          obscureText: _obscurePassword,
+                          decoration: InputDecoration(
                             labelText: 'Password',
                             hintText: 'Enter password',
                             prefixIcon: Icon(Icons.lock),
-                            border: OutlineInputBorder(),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscurePassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _obscurePassword = !_obscurePassword;
+                                });
+                              },
+                            ),
+                            border:const OutlineInputBorder(),
                           ),
-                          obscureText: true,
                           validator: (value) {
                             return value!.isEmpty
                                 ? 'Please enter a password'
@@ -87,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: validateForm,
                         color: Colors.blue,
                         textColor: Colors.white,
-                        child: Text(
+                        child: const Text(
                           'Login',
                           style: TextStyle(
                             fontSize: 16,
@@ -96,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      Text('Forgot Password?'),
+                      const Text('Forgot Password?'),
                     ],
                   ),
                 ),
@@ -136,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );
