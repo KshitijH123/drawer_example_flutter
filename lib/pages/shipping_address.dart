@@ -1,4 +1,3 @@
-import 'package:drawer_example_flutter/pages/editaddress_page.dart';
 import 'package:flutter/material.dart';
 
 class ShippingAddress extends StatefulWidget {
@@ -24,19 +23,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
   }
 
   void _editAddress(int index) async {
-    final updatedAddress = await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => EditAddressPage(
-          address: _addresses[index],
-          onAddressUpdated: (newAddress) {
-            setState(() {
-              _addresses[index] = newAddress;
-            });
-          },
-        ),
-      ),
-    );
   }
 
   @override
@@ -79,9 +65,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.transparent, 
-                  shadowColor: Colors.transparent, 
-                  minimumSize: Size(double.infinity, 50), 
+                  backgroundColor: Colors.transparent, // Text color
+                  shadowColor: Colors.transparent, // Remove shadow
+                  minimumSize: Size(double.infinity, 50), // Full-width button
                 ),
                 child: const Text('Add New Address'),
               ),

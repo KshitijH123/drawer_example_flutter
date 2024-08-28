@@ -1,5 +1,5 @@
+import 'package:drawer_example_flutter/pages/homepage.dart';
 import 'package:flutter/material.dart';
-import 'homepage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -85,6 +85,8 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 30),
                       MaterialButton(
                         onPressed: validateForm,
+                        color: Colors.blue,
+                        textColor: Colors.white,
                         child: Text(
                           'Login',
                           style: TextStyle(
@@ -92,8 +94,6 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.white,
                           ),
                         ),
-                        color: Colors.blue,
-                        textColor: Colors.white,
                       ),
                       const SizedBox(height: 20),
                       Text('Forgot Password?'),
