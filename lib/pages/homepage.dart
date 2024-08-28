@@ -115,10 +115,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                );
+                             _showLogoutConfirmationDialog(context);
+
               },
            ),
           ],
@@ -130,3 +128,33 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+ void _showLogoutConfirmationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Log Out'),
+          content: Text('Are you sure you want to log out?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); 
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); 
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  (route) => false, 
+                );
+              },
+              child: Text('Log Out'),
+            ),
+          ],
+        );
+      },
+    );
+  }
