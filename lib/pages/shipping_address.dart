@@ -1,4 +1,4 @@
-import 'package:drawer_example_flutter/editaddress_page.dart';
+import 'package:drawer_example_flutter/pages/editaddress_page.dart';
 import 'package:flutter/material.dart';
 
 class ShippingAddress extends StatefulWidget {
@@ -23,7 +23,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
     });
   }
 
-  // Function to handle editing an address
   void _editAddress(int index) async {
     final updatedAddress = await Navigator.push(
       context,
@@ -110,7 +109,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                               const Text(
                                 'Home',
                                 style: TextStyle(
-                                  fontSize: 18.0,
+                                  fontSize: 16.0,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
                                 ),
@@ -123,28 +122,88 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
-                              const SizedBox(height: 18.0),
+                              const SizedBox(height: 16.0),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   ElevatedButton(
                                     onPressed: () {
                                       _deleteAddress(index);
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.black,
+                                      foregroundColor: Colors
+                                          .transparent, backgroundColor: Colors
+                                          .transparent, // Remove default text color
+                                      shadowColor:
+                                          Colors.transparent, // Remove shadow
+                                    ).copyWith(
+                                      side: MaterialStateBorderSide.resolveWith(
+                                        (states) => BorderSide(
+                                          width: 2,
+                                          color: Colors.transparent,
+                                        ),
+                                      ),
                                     ),
-                                    child: const Text('Delete'),
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 12.0, horizontal: 20.0),
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [Colors.black, Colors.black38],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
+                                      ),
+                                      child: const Text(
+                                        'Delete',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                   const SizedBox(width: 8.0),
+                                  // Edit button
                                   ElevatedButton(
                                     onPressed: () {
                                       _editAddress(index);
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.blue,
+                                      foregroundColor: Colors
+                                          .transparent, backgroundColor: Colors
+                                          .transparent, // Remove default text color
+                                      shadowColor:
+                                          Colors.transparent, // Remove shadow
+                                    ).copyWith(
+                                      side: MaterialStateBorderSide.resolveWith(
+                                        (states) => BorderSide(
+                                          width: 2,
+                                          color: Colors.transparent,
+                                        ),
+                                      ),
                                     ),
-                                    child: const Text('Edit'),
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 16.0, horizontal: 24.0),
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [Colors.blue, Colors.purple],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
+                                      ),
+                                      child: const Text(
+                                        'Edit',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -160,7 +219,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
     );
   }
 }
-
 
 
 class AddAddressPage extends StatefulWidget {
