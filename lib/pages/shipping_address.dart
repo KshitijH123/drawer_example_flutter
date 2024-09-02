@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ShippingAddress extends StatefulWidget {
   const ShippingAddress({super.key});
@@ -8,7 +9,7 @@ class ShippingAddress extends StatefulWidget {
 }
 
 class _ShippingAddressState extends State<ShippingAddress> {
-  List<String> _addresses = [];
+  final List<String> _addresses = [];
 
   void _addAddress(String address) {
     setState(() {
@@ -22,8 +23,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
     });
   }
 
-  void _editAddress(int index) async {
-  }
+  void _editAddress(int index) async {}
 
   @override
   Widget build(BuildContext context) {
@@ -65,9 +65,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.transparent, 
-                  shadowColor: Colors.transparent, 
-                  minimumSize: const Size(double.infinity, 50), 
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  minimumSize: const Size(double.infinity, 50),
                 ),
                 child: const Text('Add New Address'),
               ),
@@ -116,11 +116,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                       _deleteAddress(index);
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      foregroundColor: Colors
-                                          .transparent, backgroundColor: Colors
-                                          .transparent, 
-                                      shadowColor:
-                                          Colors.transparent, 
+                                      foregroundColor: Colors.transparent,
+                                      backgroundColor: Colors.transparent,
+                                      shadowColor: Colors.transparent,
                                     ).copyWith(
                                       side: WidgetStateBorderSide.resolveWith(
                                         (states) => const BorderSide(
@@ -134,7 +132,10 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                           vertical: 12.0, horizontal: 20.0),
                                       decoration: BoxDecoration(
                                         gradient: const LinearGradient(
-                                          colors: [Colors.black, Colors.black38],
+                                          colors: [
+                                            Colors.black,
+                                            Colors.black38
+                                          ],
                                           begin: Alignment.topLeft,
                                           end: Alignment.bottomRight,
                                         ),
@@ -157,11 +158,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                       _editAddress(index);
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      foregroundColor: Colors
-                                          .transparent, backgroundColor: Colors
-                                          .transparent,
-                                      shadowColor:
-                                          Colors.transparent, 
+                                      foregroundColor: Colors.transparent,
+                                      backgroundColor: Colors.transparent,
+                                      shadowColor: Colors.transparent,
                                     ).copyWith(
                                       side: WidgetStateBorderSide.resolveWith(
                                         (states) => const BorderSide(
@@ -206,7 +205,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
   }
 }
 
-
 class AddAddressPage extends StatefulWidget {
   const AddAddressPage({super.key});
 
@@ -221,8 +219,11 @@ class _AddAddressPageState extends State<AddAddressPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add New Address'),
-        backgroundColor: Colors.red,
+        title: const Text(
+          'Add New Address',
+          style: TextStyle(fontSize: 28),
+        ),
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -234,26 +235,30 @@ class _AddAddressPageState extends State<AddAddressPage> {
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.w500,
-                color: Colors.grey,
+                color: Colors.blueAccent,
               ),
             ),
             const SizedBox(height: 8.0),
             TextField(
               controller: _addressController,
               decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter your address',
-              ),
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter your address',
+                  hintStyle: TextStyle(color: Colors.blueGrey)),
             ),
             const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
+                StepStyle(border: Border.all(color: Colors.black));
                 final newAddress = _addressController.text;
                 if (newAddress.isNotEmpty) {
                   Navigator.pop(context, newAddress);
                 }
               },
-              child: const Text('Add Address'),
+              child: const Text(
+                'Add Address',
+                style: TextStyle(color: Colors.blueGrey),
+              ),
             ),
           ],
         ),
