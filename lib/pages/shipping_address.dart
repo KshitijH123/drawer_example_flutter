@@ -65,9 +65,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.transparent, // Text color
-                  shadowColor: Colors.transparent, // Remove shadow
-                  minimumSize: Size(double.infinity, 50), // Full-width button
+                  backgroundColor: Colors.transparent, 
+                  shadowColor: Colors.transparent, 
+                  minimumSize: Size(double.infinity, 50), 
                 ),
                 child: const Text('Add New Address'),
               ),
@@ -118,11 +118,11 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                     style: ElevatedButton.styleFrom(
                                       foregroundColor: Colors
                                           .transparent, backgroundColor: Colors
-                                          .transparent, // Remove default text color
+                                          .transparent, 
                                       shadowColor:
-                                          Colors.transparent, // Remove shadow
+                                          Colors.transparent, 
                                     ).copyWith(
-                                      side: MaterialStateBorderSide.resolveWith(
+                                      side: WidgetStateBorderSide.resolveWith(
                                         (states) => BorderSide(
                                           width: 2,
                                           color: Colors.transparent,
@@ -159,12 +159,12 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                     style: ElevatedButton.styleFrom(
                                       foregroundColor: Colors
                                           .transparent, backgroundColor: Colors
-                                          .transparent, // Remove default text color
+                                          .transparent,
                                       shadowColor:
-                                          Colors.transparent, // Remove shadow
+                                          Colors.transparent, 
                                     ).copyWith(
-                                      side: MaterialStateBorderSide.resolveWith(
-                                        (states) => BorderSide(
+                                      side: WidgetStateBorderSide.resolveWith(
+                                        (states) => const BorderSide(
                                           width: 2,
                                           color: Colors.transparent,
                                         ),
