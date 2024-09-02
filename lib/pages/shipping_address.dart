@@ -39,7 +39,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [
                     Colors.purple,
                     Colors.deepOrangeAccent,
@@ -67,7 +67,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                   foregroundColor: Colors.white,
                   backgroundColor: Colors.transparent, 
                   shadowColor: Colors.transparent, 
-                  minimumSize: Size(double.infinity, 50), 
+                  minimumSize: const Size(double.infinity, 50), 
                 ),
                 child: const Text('Add New Address'),
               ),
@@ -123,7 +123,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                           Colors.transparent, 
                                     ).copyWith(
                                       side: WidgetStateBorderSide.resolveWith(
-                                        (states) => BorderSide(
+                                        (states) => const BorderSide(
                                           width: 2,
                                           color: Colors.transparent,
                                         ),
@@ -133,7 +133,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 12.0, horizontal: 20.0),
                                       decoration: BoxDecoration(
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [Colors.black, Colors.black38],
                                           begin: Alignment.topLeft,
                                           end: Alignment.bottomRight,
@@ -174,7 +174,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 16.0, horizontal: 24.0),
                                       decoration: BoxDecoration(
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [Colors.blue, Colors.purple],
                                           begin: Alignment.topLeft,
                                           end: Alignment.bottomRight,
