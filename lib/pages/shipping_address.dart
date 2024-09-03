@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ShippingAddress extends StatefulWidget {
   const ShippingAddress({super.key});
@@ -152,7 +151,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                     ),
                                   ),
                                   const SizedBox(width: 8.0),
-                                  // Edit button
                                   ElevatedButton(
                                     onPressed: () {
                                       _editAddress(index);
@@ -217,6 +215,7 @@ class AddAddressPage extends StatefulWidget {
 
 class _AddAddressPageState extends State<AddAddressPage> {
   final TextEditingController _addressController = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -246,6 +245,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                 hintText: 'Enter your address',hintStyle: TextStyle(color: Colors.grey),suffixIcon: Icon(Icons.home_outlined)
               ),
             ),
+            
             const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
