@@ -36,6 +36,8 @@ flutter:
   assets:
     - assets/images/new_profile.png
     - assets/images/jay.png  
+    - assets/images/profile.png
+
 
 
 
