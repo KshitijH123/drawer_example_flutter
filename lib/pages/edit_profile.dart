@@ -48,7 +48,7 @@ class _EditProfileState extends State<EditProfile> {
     _accountTypeFocusNode.addListener(() {
       setState(() {
         _accountTypeBorderColor =
-            _accountTypeFocusNode.hasFocus ? Colors.red : Colors.grey;
+            _accountTypeFocusNode.hasFocus ? Colors.red : Colors.red;
       });
     });
   }
@@ -75,7 +75,7 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(''),
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.red,
       ),
       body: Stack(
         children: [

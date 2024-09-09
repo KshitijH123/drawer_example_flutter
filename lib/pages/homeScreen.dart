@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Container(
             height: 150,
             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Container(
             height: 50,
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -212,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          SizedBox(height: 14),
+         const SizedBox(height: 14),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Align(
@@ -227,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+         const SizedBox(height: 16),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.builder(
@@ -258,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildCategoriesScreen() {
-    return Center(child: Text('Categories Screen'));
+    return const Center(child: Text('Categories Screen'));
   }
 
   Widget _buildRewardsScreen(BuildContext context) {
@@ -269,7 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             padding: EdgeInsets.all(16),
             color: Colors.redAccent,
-            child: Text(
+            child: const Text(
               '🎁 Get Your Reward Here 🎁',
               style: TextStyle(
                 color: Colors.white,
@@ -280,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: 20),
-          Text(
+          const Text(
             'Scan QR Code',
             style: TextStyle(
               fontSize: 18,
@@ -298,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: CircleAvatar(
               radius: 120,
               backgroundColor: Colors.blueAccent.withOpacity(0.2),
-              child: Icon(
+              child: const Icon(
                 Icons.qr_code_scanner,
                 size: 120,
                 color: Colors.blueAccent,
@@ -651,10 +651,10 @@ Widget _buildProfileCard() {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     price,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Colors.green,
                       fontWeight: FontWeight.bold,
