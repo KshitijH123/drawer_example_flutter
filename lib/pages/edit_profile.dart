@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'camera_page.dart'; 
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -66,6 +67,13 @@ class _EditProfileState extends State<EditProfile> {
     super.dispose();
   }
 
+  void _onCameraIconTap() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CameraPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final double circleAvatarRadius = 70;
@@ -107,16 +115,19 @@ class _EditProfileState extends State<EditProfile> {
                           Positioned(
                             bottom: 10,
                             right: 4,
-                            child: Container(
-                              padding: const EdgeInsets.all(3.0),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                              ),
-                              child: const Icon(
-                                Icons.camera_alt,
-                                color: Colors.blueGrey,
-                                size: 24.0,
+                            child: GestureDetector(
+                              onTap: _onCameraIconTap,
+                              child: Container(
+                                padding: const EdgeInsets.all(3.0),
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: const Icon(
+                                  Icons.camera_alt,
+                                  color: Colors.blueGrey,
+                                  size: 24.0,
+                                ),
                               ),
                             ),
                           ),
@@ -154,14 +165,12 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _nameFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.circular(10.0), 
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(color: _nameBorderColor),
                     ),
                     hintText: 'Enter your full name',
-                    contentPadding: EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 12.0), 
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                   ),
                 ),
                 const SizedBox(height: 20.0),
@@ -179,14 +188,12 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _emailFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(color: _emailBorderColor),
                     ),
                     hintText: 'Enter your email address',
-                    contentPadding: EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 12.0), 
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                   ),
                 ),
                 const SizedBox(height: 20.0),
@@ -204,14 +211,12 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _phoneFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.circular(10.0), 
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(color: _phoneBorderColor),
                     ),
                     hintText: 'Enter your phone number',
-                    contentPadding: EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 12.0), 
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                   ),
                 ),
                 const SizedBox(height: 20.0),
@@ -229,14 +234,12 @@ class _EditProfileState extends State<EditProfile> {
                   focusNode: _accountTypeFocusNode,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.circular(10.0), 
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(color: _accountTypeBorderColor),
                     ),
                     hintText: 'Enter your account type',
-                    contentPadding: EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 12.0), 
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                   ),
                 ),
               ],
