@@ -1,5 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'camera_page.dart'; 
+import 'camera_page.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -9,6 +10,8 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
+  File? _profileImage; // Use this state variable for the profile image
+
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -49,7 +52,7 @@ class _EditProfileState extends State<EditProfile> {
     _accountTypeFocusNode.addListener(() {
       setState(() {
         _accountTypeBorderColor =
-            _accountTypeFocusNode.hasFocus ? Colors.red : Colors.red;
+            _accountTypeFocusNode.hasFocus ? Colors.red : Colors.grey;
       });
     });
   }
@@ -67,11 +70,17 @@ class _EditProfileState extends State<EditProfile> {
     super.dispose();
   }
 
-  void _onCameraIconTap() {
-    Navigator.push(
+  void _onCameraIconTap() async {
+    final File? result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const CameraPage()),
     );
+
+    if (result != null) {
+      setState(() {
+        _profileImage = result; 
+      });
+    }
   }
 
   @override
@@ -107,9 +116,11 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           CircleAvatar(
                             radius: circleAvatarRadius,
-                            backgroundImage: const NetworkImage(
-                              'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png',
-                            ),
+                            backgroundImage: _profileImage != null
+                                ? FileImage(_profileImage!)
+                                : const NetworkImage(
+                                    'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png',
+                                  ),
                             backgroundColor: Colors.grey[200],
                           ),
                           Positioned(

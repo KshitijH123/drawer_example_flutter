@@ -16,9 +16,10 @@ class _CameraPageState extends State<CameraPage> {
 
   Future<void> _pickImage(ImageSource source) async {
     final XFile? image = await _picker.pickImage(source: source);
-    setState(() {
-      _image = image;
-    });
+    if (image != null) {
+      // Return the selected image
+      Navigator.pop(context, File(image.path));
+    }
   }
 
   @override
