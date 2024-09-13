@@ -292,7 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-         const SizedBox(height: 8),
+        const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
@@ -308,17 +308,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 TextButton(
                   onPressed: () {
                   },
-                  child: const Text(
-                    'See All',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(width: 4), 
+                      Icon(
+                        Icons.arrow_forward, 
+                        size: 16,
+                         
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
+
           const SizedBox(height: 16),
           Container(
             height: 50,
