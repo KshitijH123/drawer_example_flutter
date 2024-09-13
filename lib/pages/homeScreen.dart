@@ -257,8 +257,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildCategoriesScreen() {
-return SingleChildScrollView(
+ Widget _buildCategoriesScreen() {
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -292,56 +292,15 @@ return SingleChildScrollView(
               ),
             ),
           ),
-          const SizedBox(height: 16),
-          Container(
-            height: 150,
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: PageView(
-              controller: _pageController,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.3),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
-                    child: Image.network(
-                      'https://t4.ftcdn.net/jpg/02/61/01/87/360_F_261018762_f15Hmze7A0oL58Uwe7SrDKNS4fZIjLiF.jpg',
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width,
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.3),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
-                    child: Image.network(
-                      'https://t4.ftcdn.net/jpg/03/98/21/07/360_F_398210729_GADy7kthTgJCLyIDNr2IB8D1bSzZcL8j.jpg',
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width,
-                    ),
-                  ),
-                ),
-              ],
+          const SizedBox(height: 8), 
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Text(
+              'Products & Services',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(height: 16),
@@ -352,13 +311,6 @@ return SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  _buildButton('All'),
-                  SizedBox(width: 16),
-                  _buildButton('Switches'),
-                  SizedBox(width: 16),
-                  _buildButton('Door Locks'),
-                  SizedBox(width: 16),
-                  _buildButton('Car Door'),
                 ],
               ),
             ),
@@ -405,7 +357,9 @@ return SingleChildScrollView(
           ),
         ],
       ),
-    );  }
+    );
+  }
+
 
   Widget _buildRewardsScreen(BuildContext context) {
     return Center(
