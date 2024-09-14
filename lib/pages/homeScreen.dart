@@ -212,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-         const SizedBox(height: 14),
+          const SizedBox(height: 14),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Align(
@@ -227,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-         const SizedBox(height: 16),
+          const SizedBox(height: 16),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.builder(
@@ -257,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
- Widget _buildCategoriesScreen() {
+  Widget _buildCategoriesScreen() {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,7 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-        const SizedBox(height: 8),
+          const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
@@ -306,8 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -318,11 +317,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(width: 4), 
+                      SizedBox(width: 4),
                       Icon(
-                        Icons.arrow_forward, 
+                        Icons.arrow_forward,
                         size: 16,
-                         
                       ),
                     ],
                   ),
@@ -330,7 +328,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-
           const SizedBox(height: 16),
           Container(
             height: 50,
@@ -338,8 +335,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
-                ],
+                children: [],
               ),
             ),
           ),
@@ -348,13 +344,26 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Align(
               alignment: Alignment.centerRight,
-              child: Text(
-                'See All',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black.withOpacity(0.7),
-                ),
+              child: Row(
+                mainAxisSize: MainAxisSize
+                    .min, 
+                children: [
+                  Text(
+                    'Recently Added',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black.withOpacity(0.7),
+                    ),
+                  ),
+                  const SizedBox(
+                      width: 8), 
+                  Icon(
+                    Icons
+                        .recent_actors, 
+                    color: Colors.black.withOpacity(0.7), 
+                  ),
+                ],
               ),
             ),
           ),
@@ -387,7 +396,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
 
   Widget _buildRewardsScreen(BuildContext context) {
     return Center(
@@ -438,7 +446,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
- Widget _buildProfileScreen() {
+  Widget _buildProfileScreen() {
     return Center(
       child: Container(
         color: Colors.white54,
@@ -486,9 +494,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                       Navigator.push(
+                      Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ShippingAddress()),
+                        MaterialPageRoute(
+                            builder: (context) => ShippingAddress()),
                       );
                     },
                     child: _buildRow(
@@ -521,11 +530,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-
-
-Widget _buildProfileCard() {
+  Widget _buildProfileCard() {
     return Stack(
-      clipBehavior: Clip.none, 
+      clipBehavior: Clip.none,
       children: [
         Card(
           elevation: 5,
@@ -573,7 +580,7 @@ Widget _buildProfileCard() {
           ),
         ),
         Positioned(
-          top: -20, 
+          top: -20,
           left: 16.0,
           right: 16.0,
           child: Text(
@@ -582,7 +589,7 @@ Widget _buildProfileCard() {
             style: TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
-              color: Colors.blueGrey, 
+              color: Colors.blueGrey,
             ),
           ),
         ),
@@ -592,7 +599,7 @@ Widget _buildProfileCard() {
           child: IconButton(
             icon: Icon(Icons.edit_outlined),
             onPressed: () {
-           Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => EditProfile()),
               );
@@ -602,9 +609,6 @@ Widget _buildProfileCard() {
       ],
     );
   }
-
-
-
 
   Widget _buildRow(String text, IconData icon) {
     return Container(
