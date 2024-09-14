@@ -301,8 +301,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 const Text(
                   'Products & Services',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
                 TextButton(
@@ -349,10 +349,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Align(
               alignment: Alignment.centerRight,
               child: Text(
-                'Recently Added',
+                'See All',
                 style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
                   color: Colors.black.withOpacity(0.7),
                 ),
               ),
