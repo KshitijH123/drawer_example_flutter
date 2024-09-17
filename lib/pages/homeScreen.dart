@@ -375,7 +375,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                     'Recently Added',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500,
                       color: Colors.black.withOpacity(0.7),
                     ),
