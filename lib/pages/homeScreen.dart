@@ -319,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       SizedBox(width: 4),
                       Icon(
-                        Icons.arrow_forward,
+                        Icons.arrow_forward_ios,
                         size: 16,
                       ),
                     ],
@@ -359,8 +359,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                       width: 8), 
                   Icon(
-                    Icons
-                        .recent_actors, 
+                    Icons.keyboard_arrow_down_outlined, 
                     color: Colors.black.withOpacity(0.7), 
                   ),
                 ],
