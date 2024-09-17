@@ -212,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 12),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Align(
@@ -257,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildCategoriesScreen() {
+ Widget _buildCategoriesScreen() {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -330,23 +330,47 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SizedBox(height: 16),
           Container(
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: const SingleChildScrollView(
+            height: 120, 
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [],
+                children: [
+                  _buildAvatarWithLabel(
+                    'https://www.chinadaier.com/wp-content/uploads/2022/08/TOGGLE-SWITCH.jpg.webp',
+                    'Switch',
+                  ),
+                  const SizedBox(width: 18),
+                  _buildAvatarWithLabel(
+                    'https://www.autodeal.com.ph/custom/blog-post/header/types-of-door-handles-620cc36819e84.jpg',
+                    'Door Handle',
+                  ),
+                  const SizedBox(width: 18),
+                  _buildAvatarWithLabel(
+                    'https://www.maypoleltd.com/wp-content/uploads/2019/09/5494_5.jpg',
+                    'Light',
+                  ),
+                  const SizedBox(width: 18),
+                  _buildAvatarWithLabel(
+                    'https://m.media-amazon.com/images/I/71GV627s4YL._AC_UF1000,1000_QL80_.jpg',
+                    'Tool',
+                  ),
+                   const SizedBox(width: 18),
+                  _buildAvatarWithLabel(
+                    'https://www.autodeal.com.ph/custom/blog-post/header/types-of-door-handles-620cc36819e84.jpg',
+                    'Door Handle',
+                  ),
+                ],
               ),
             ),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 2),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Align(
               alignment: Alignment.centerRight,
               child: Row(
-                mainAxisSize: MainAxisSize
-                    .min, 
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     'Recently Added',
@@ -356,11 +380,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.black.withOpacity(0.7),
                     ),
                   ),
-                  const SizedBox(
-                      width: 8), 
+                  const SizedBox(width: 8),
                   Icon(
-                    Icons.keyboard_arrow_down_outlined, 
-                    color: Colors.black.withOpacity(0.7), 
+                    Icons.keyboard_arrow_down_outlined,
+                    color: Colors.black.withOpacity(0.7),
                   ),
                 ],
               ),
@@ -393,6 +416,26 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildAvatarWithLabel(String imageUrl, String label) {
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 30,
+          backgroundImage: NetworkImage(imageUrl),
+          backgroundColor: Colors.transparent,
+        ),
+        const SizedBox(height: 8),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+      ],
     );
   }
 
@@ -474,7 +517,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   InkWell(
                     onTap: () {
-                      print('My Order tapped');
+                     print('My Order tapped');
                     },
                     child: _buildRow('My Order', Icons.shopping_cart_outlined),
                   ),
