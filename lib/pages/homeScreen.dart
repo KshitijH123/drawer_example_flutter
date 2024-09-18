@@ -1,7 +1,10 @@
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
 import 'package:drawer_example_flutter/pages/edit_profile.dart';
+import 'package:drawer_example_flutter/pages/favoriate_page.dart';
+import 'package:drawer_example_flutter/pages/notification.dart';
 import 'package:drawer_example_flutter/pages/qr_scanner.dart';
 import 'package:drawer_example_flutter/pages/shipping_address.dart';
+import 'package:drawer_example_flutter/pages/shopping.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -53,19 +56,29 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.notifications_none_rounded, size: 30),
             onPressed: () {
-              print('Notification Icon Pressed');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotificationsPage()),
+              );
             },
           ),
-          IconButton(
+                   IconButton(
             icon: const Icon(Icons.favorite_border_rounded, size: 30),
             onPressed: () {
-              print('Heart Icon Pressed');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FavoritesPage()),
+              );
             },
           ),
-          IconButton(
+
+         IconButton(
             icon: const Icon(Icons.shopping_bag_outlined, size: 30),
             onPressed: () {
-              print('Shopping Icon Pressed');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ShoppingPage()),
+              );
             },
           ),
         ],
