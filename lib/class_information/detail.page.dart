@@ -55,7 +55,7 @@ class DetailPage extends StatelessWidget {
                   SizedBox(height: 10),
                   Text(
                     price,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       color: Colors.green,
                       fontWeight: FontWeight.bold,
