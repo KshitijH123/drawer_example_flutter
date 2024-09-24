@@ -5,7 +5,9 @@ class ShoppingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Shopping')),
-      body: Center(child: Text('Shopping Page')),
+      body: const Center(child: Text('Shopping Page',
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+      )),
     );
   }
 }

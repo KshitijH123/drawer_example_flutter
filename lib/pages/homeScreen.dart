@@ -238,6 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.black.withOpacity(0.7),
                 ),
               ),
+              
             ),
           ),
           const SizedBox(height: 16),
@@ -343,7 +344,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SizedBox(height: 16),
           Container(
-            height: 120, 
+            height: 100, 
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -388,8 +389,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                     'Recently Added',
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                       color: Colors.black.withOpacity(0.7),
                     ),
                   ),

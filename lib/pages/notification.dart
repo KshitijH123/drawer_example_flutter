@@ -41,7 +41,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifications'),
+        title: const Text('Notifications',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800),),
       ),
       body: ListView.builder(
         itemCount: notifications.length,
