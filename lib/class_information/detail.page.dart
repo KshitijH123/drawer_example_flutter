@@ -85,7 +85,7 @@ class DetailPage extends StatelessWidget {
                         onPressed: () {
                           print('Added to Cart');
                         },
-                        icon: Icon(Icons.shopping_cart,color: Colors.red[300],),
+                        icon: Icon(Icons.shopping_cart,color: Colors.red[200],),
                         label: Text('Add to Cart',style: TextStyle(color: Colors.red),),
                       ),
                      IconButton(
