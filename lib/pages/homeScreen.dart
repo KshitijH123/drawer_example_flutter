@@ -643,7 +643,7 @@ class _HomeScreenState extends State<HomeScreen> {
             'Account',
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 24.0,
+              fontSize: 26.0,
               fontWeight: FontWeight.bold,
               color: Colors.blueGrey,
             ),

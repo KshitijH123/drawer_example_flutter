@@ -28,14 +28,14 @@ class DetailPage extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 250, 
+              height: 250,
               child: ClipRRect(
                 borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(16), 
+                  bottom: Radius.circular(16),
                 ),
                 child: Image.network(
                   imageUrl,
-                  fit: BoxFit.contain, 
+                  fit: BoxFit.contain,
                   width: double.infinity,
                 ),
               ),
@@ -76,6 +76,25 @@ class DetailPage extends StatelessWidget {
                       fontSize: 14,
                       color: Colors.grey,
                     ),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          print('Added to Cart');
+                        },
+                        icon: Icon(Icons.shopping_cart),
+                        label: Text('Add to Cart'),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.favorite_border),
+                        onPressed: () {
+                          print('Added to Favorites');
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
