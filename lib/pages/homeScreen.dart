@@ -408,7 +408,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 16,
@@ -575,9 +575,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 16.0),
-            Padding(
-              padding: const EdgeInsets.all(2.0),
+            const SizedBox(height: 16.0),
+            const Padding(
+              padding: EdgeInsets.all(2.0),
               child: Text('Terms & conditions'),
             ),
           ],
@@ -600,13 +600,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 50,
                       backgroundImage: NetworkImage(
                           'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png'),
                     ),
                     SizedBox(height: 8.0),
-                    Text(
+                    const Text(
                       'Kshitij Hapase',
                       style: TextStyle(
                         fontSize: 22.0,
@@ -614,7 +614,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(height: 8.0),
-                    Text(
+                    const Text(
                       'GOLD    1200 POINTS',
                       style: TextStyle(
                         fontSize: 16.0,
@@ -635,7 +635,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-        Positioned(
+        const Positioned(
           top: -20,
           left: 16.0,
           right: 16.0,

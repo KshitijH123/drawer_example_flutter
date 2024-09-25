@@ -79,26 +79,20 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          print('Added to Cart');
-                        },
-                        icon: Icon(Icons.shopping_cart,color: Colors.red[200],),
-                        label: Text('Add to Cart',style: TextStyle(color: Colors.red),),
-                      ),
-                     IconButton(
-                      iconSize: 30,
-                        icon: Icon(
-                          Icons.favorite_border,
-                          color: Colors.red[400], 
+                      Expanded(
+                        child: Center(
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              print('Added to Cart');
+                            },
+                            icon: Icon(Icons.shopping_cart,
+                                color: Colors.red[200]),
+                            label: Text('Add to Cart',
+                                style: TextStyle(color: Colors.red)),
+                          ),
                         ),
-                        onPressed: () {
-                          print('Added to Favorites');
-                        },
                       ),
-
                     ],
                   ),
                 ],
@@ -110,3 +104,13 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
+// IconButton(
+//                         iconSize: 30,
+//                         icon: Icon(
+//                           Icons.favorite_border,
+//                           color: Colors.red[400],
+//                         ),
+//                         onPressed: () {
+//                           print('Added to Favorites');
+//                         },
+//                       ),
