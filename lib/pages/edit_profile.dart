@@ -10,7 +10,7 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
-  File? _profileImage; // Use this state variable for the profile image
+  File? _profileImage; 
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
