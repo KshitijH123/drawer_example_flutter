@@ -85,14 +85,14 @@ class DetailPage extends StatelessWidget {
                         onPressed: () {
                           print('Added to Cart');
                         },
-                        icon: Icon(Icons.shopping_cart,color: Colors.red[200],),
+                        icon: Icon(Icons.shopping_cart,color: Colors.red[300],),
                         label: Text('Add to Cart',style: TextStyle(color: Colors.red),),
                       ),
                      IconButton(
                       iconSize: 30,
                         icon: Icon(
                           Icons.favorite_border,
-                          color: Colors.red, 
+                          color: Colors.red[400], 
                         ),
                         onPressed: () {
                           print('Added to Favorites');
