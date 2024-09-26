@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Drawer Example',style: TextStyle(fontWeight:FontWeight.w600,fontSize: 22 ),),
       ),
-      drawer: Drawer(
+     drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -119,12 +119,20 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: Image.asset('assets/images/jay.png'), // Displaying the image
+           body: Center(
+        child: SizedBox(
+          width: 200, 
+          height: 200, 
+          child: Image.asset(
+            'assets/images/jay.png',
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }
 }
+
 
 void _showLogoutConfirmationDialog(BuildContext context) {
   showDialog(
