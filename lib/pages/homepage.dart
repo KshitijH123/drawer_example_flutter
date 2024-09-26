@@ -19,10 +19,7 @@ class HomePage extends StatelessWidget {
               currentAccountPicture: Image.asset('assets/images/profile.png'),
             ),
             ListTile(
-              leading: const Icon(
-                Icons.home,
-                size: 30.0,
-              ),
+              leading: const Icon(Icons.home, size: 30.0),
               title: Container(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: const Text(
@@ -115,46 +112,46 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                             _showLogoutConfirmationDialog(context);
-
+                _showLogoutConfirmationDialog(context);
               },
-           ),
+            ),
           ],
         ),
       ),
-      body: const Center(
-        child: Text('Select a page from the menu.'),
+      body: Center(
+        child: Image.asset('assets/images/jay.png'), // Displaying the image
       ),
     );
   }
 }
- void _showLogoutConfirmationDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Log Out'),
-          content: Text('Are you sure you want to log out?'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); 
-              },
-              child: Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); 
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                  (route) => false, 
-                );
-              },
-              child: Text('Log Out'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+
+void _showLogoutConfirmationDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Log Out'),
+        content: const Text('Are you sure you want to log out?'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+                (route) => false,
+              );
+            },
+            child: const Text('Log Out'),
+          ),
+        ],
+      );
+    },
+  );
+}
