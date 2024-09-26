@@ -121,8 +121,8 @@ class HomePage extends StatelessWidget {
       ),
            body: Center(
         child: SizedBox(
-          width: 200, 
-          height: 200, 
+          width: 350, 
+          height: 250, 
           child: Image.asset(
             'assets/images/jay.png',
             fit: BoxFit.cover,
