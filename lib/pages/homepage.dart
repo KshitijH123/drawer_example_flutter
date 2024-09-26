@@ -1,13 +1,14 @@
 import 'package:drawer_example_flutter/pages/homeScreen.dart';
 import 'package:drawer_example_flutter/pages/loginpage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Drawer Example'),
+        title: const Text('Drawer Example',style: TextStyle(fontWeight:FontWeight.w600,fontSize: 22 ),),
       ),
       drawer: Drawer(
         child: ListView(
