@@ -102,7 +102,7 @@ class DetailPage extends StatelessWidget {
                                   double.infinity, 60), 
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16), 
-                                  backgroundColor: Colors.yellow[200],
+                                  backgroundColor: Colors.yellow[300],
                             ),
                             onPressed: () {
                               print('Added to Cart');
@@ -128,7 +128,7 @@ class DetailPage extends StatelessWidget {
                                   double.infinity, 60), 
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16), 
-                                  backgroundColor: Colors.orange[200],
+                                  backgroundColor: Colors.orange[300],
                             ),
                             onPressed: () {
                               print('Buy Now');
