@@ -52,14 +52,28 @@ class DetailPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    price,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                    ),
+                 Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        price,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        iconSize: 30,
+                        icon: Icon(
+                          Icons.favorite_border,
+                          color: Colors.red[400],
+                        ),
+                        onPressed: () {
+                          print('Added to Favorites');
+                        },
+                      ),
+                    ],
                   ),
                   SizedBox(height: 20),
                   Text(
@@ -138,13 +152,3 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
-// IconButton(
-//                         iconSize: 30,
-//                         icon: Icon(
-//                           Icons.favorite_border,
-//                           color: Colors.red[400],
-//                         ),
-//                         onPressed: () {
-//                           print('Added to Favorites');
-//                         },
-//                       ),
