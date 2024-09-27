@@ -92,11 +92,10 @@ class DetailPage extends StatelessWidget {
                             onPressed: () {
                               print('Added to Cart');
                             },
-                            icon: Icon(Icons.shopping_cart,
-                                color: Colors.red[200]),
+                           
                             label: const Text(
                               'Add to Cart',
-                              style: TextStyle(color: Colors.red),
+                              style: TextStyle(color: Colors.red,fontSize: 20),
                             ),
                           ),
                         ),
@@ -118,9 +117,11 @@ class DetailPage extends StatelessWidget {
                             onPressed: () {
                               print('Buy Now');
                             },
+                            
                             child: const Text(
                               'Buy Now',
-                              style: TextStyle(color: Colors.red),
+                              style: TextStyle(color: Colors.red,fontSize: 20),
+                          
                             ),
                           ),
                         ),
