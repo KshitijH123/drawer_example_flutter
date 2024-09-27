@@ -67,7 +67,7 @@ class DetailPage extends StatelessWidget {
                         iconSize: 30,
                         icon: Icon(
                           Icons.favorite_border,
-                          color: Colors.red[400],
+                          color: Colors.red[300],
                         ),
                         onPressed: () {
                           print('Added to Favorites');
@@ -102,6 +102,7 @@ class DetailPage extends StatelessWidget {
                                   double.infinity, 60), 
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16), 
+                                  backgroundColor: Colors.yellow[200],
                             ),
                             onPressed: () {
                               print('Added to Cart');
@@ -109,7 +110,7 @@ class DetailPage extends StatelessWidget {
                            
                             label: const Text(
                               'Add to Cart',
-                              style: TextStyle(color: Colors.red,fontSize: 20),
+                              style: TextStyle(fontSize: 20),
                             ),
                           ),
                         ),
@@ -127,6 +128,7 @@ class DetailPage extends StatelessWidget {
                                   double.infinity, 60), 
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16), 
+                                  backgroundColor: Colors.orange[200],
                             ),
                             onPressed: () {
                               print('Buy Now');
@@ -134,7 +136,7 @@ class DetailPage extends StatelessWidget {
                             
                             child: const Text(
                               'Buy Now',
-                              style: TextStyle(color: Colors.red,fontSize: 20),
+                              style: TextStyle(fontSize: 20),
                           
                             ),
                           ),
