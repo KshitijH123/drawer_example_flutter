@@ -95,6 +95,24 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                   SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Center(
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              print('Buy Now');
+                            },
+                            icon: Icon(Icons.shopping_cart,
+                                color: Colors.red[200]),
+                            label: Text('Buy Now',
+                                style: TextStyle(color: Colors.red)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
