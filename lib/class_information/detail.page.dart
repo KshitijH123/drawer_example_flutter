@@ -30,7 +30,7 @@ class DetailPage extends StatelessWidget {
               width: double.infinity,
               height: 250,
               child: ClipRRect(
-                borderRadius: BorderRadius.vertical(
+                borderRadius: const BorderRadius.vertical(
                   bottom: Radius.circular(16),
                 ),
                 child: Image.network(
@@ -77,42 +77,57 @@ class DetailPage extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 20),
+                SizedBox(height: 20),
                   Row(
                     children: [
                       Expanded(
                         child: Center(
                           child: ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(
+                                  double.infinity, 60), 
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 16), 
+                            ),
                             onPressed: () {
                               print('Added to Cart');
                             },
                             icon: Icon(Icons.shopping_cart,
                                 color: Colors.red[200]),
-                            label: Text('Add to Cart',
-                                style: TextStyle(color: Colors.red)),
+                            label: const Text(
+                              'Add to Cart',
+                              style: TextStyle(color: Colors.red),
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
-                   SizedBox(height: 20),
+                  SizedBox(height: 20),
                   Row(
                     children: [
                       Expanded(
                         child: Center(
-                          child: ElevatedButton.icon(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(
+                                  double.infinity, 60), 
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 16), 
+                            ),
                             onPressed: () {
                               print('Buy Now');
                             },
-                            icon: Icon(Icons.shopping_cart,
-                                color: Colors.red[200]),
-                            label: Text('Buy Now',
-                                style: TextStyle(color: Colors.red)),
+                            child: const Text(
+                              'Buy Now',
+                              style: TextStyle(color: Colors.red),
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
+
                 ],
               ),
             ),
