@@ -49,7 +49,7 @@ class DetailPage extends StatelessWidget {
                     title,
                     style: const TextStyle(
                       fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                  Row(
