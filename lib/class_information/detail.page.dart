@@ -58,7 +58,7 @@ class DetailPage extends StatelessWidget {
                       Text(
                         price,
                         style: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 22,
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
                         ),
@@ -66,7 +66,7 @@ class DetailPage extends StatelessWidget {
                       IconButton(
                         iconSize: 30,
                         icon: Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           color: Colors.red[300],
                         ),
                         onPressed: () {
@@ -125,7 +125,7 @@ class DetailPage extends StatelessWidget {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               minimumSize: const Size(
-                                  double.infinity, 60), 
+                                  double.infinity, 60,), 
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16), 
                                   backgroundColor: Colors.orange[300],
