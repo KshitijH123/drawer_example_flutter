@@ -67,7 +67,7 @@ class DetailPage extends StatelessWidget {
                         iconSize: 30,
                         icon: Icon(
                           Icons.favorite,
-                          color: Colors.red[300],
+                          color: Colors.red[400],
                         ),
                         onPressed: () {
                           print('Added to Favorites');
@@ -102,7 +102,7 @@ class DetailPage extends StatelessWidget {
                                   double.infinity, 60), 
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16), 
-                                  backgroundColor: Colors.yellow[300],
+                                  backgroundColor: Colors.yellow[400],
                             ),
                             onPressed: () {
                               print('Added to Cart');
@@ -128,7 +128,7 @@ class DetailPage extends StatelessWidget {
                                   double.infinity, 60,), 
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16), 
-                                  backgroundColor: Colors.orange[300],
+                                  backgroundColor: Colors.orange[400],
                             ),
                             onPressed: () {
                               print('Buy Now');
