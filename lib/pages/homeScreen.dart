@@ -553,7 +553,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ShippingAddress()),
+                            builder: (context) => const ShippingAddress()),
                       );
                     },
                     child: _buildRow(
