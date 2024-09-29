@@ -41,37 +41,37 @@ class _NotificationsPageState extends State<NotificationsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifications',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800),),
+        title: const Text(
+          'Notifications',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+        ),
       ),
       body: ListView.builder(
         itemCount: notifications.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () => _deleteNotification(index), 
-            child: Card(
-              margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-              child: ListTile(
-                leading: const Icon(Icons.notifications, color: Colors.blue),
-                title: Text(
-                  notifications[index]['title']!,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(notifications[index]['description']!),
-                   const SizedBox(height: 4),
-                    Text(
-                      notifications[index]['time']!,
-                      style: const TextStyle(color: Colors.grey, fontSize: 12),
-                    ),
-                  ],
-                ),
-                trailing: IconButton(
-                  icon: Icon(Icons.delete, color: Colors.blue[200]),
-                  onPressed: () => _deleteNotification(index),
-                  tooltip: 'Delete Notification',
-                ),
+          return Card(
+            margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+            child: ListTile(
+              leading: const Icon(Icons.notifications, color: Colors.blue),
+              title: Text(
+                notifications[index]['title']!,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(notifications[index]['description']!),
+                  const SizedBox(height: 4),
+                  Text(
+                    notifications[index]['time']!,
+                    style: const TextStyle(color: Colors.grey, fontSize: 12),
+                  ),
+                ],
+              ),
+              trailing: IconButton(
+                icon: Icon(Icons.delete, color: Colors.blue[200]),
+                onPressed: () => _deleteNotification(index),
+                tooltip: 'Delete Notification',
               ),
             ),
           );
