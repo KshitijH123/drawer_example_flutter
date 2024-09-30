@@ -238,7 +238,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.black.withOpacity(0.7),
                 ),
               ),
-              
             ),
           ),
           const SizedBox(height: 16),
@@ -246,7 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 16,
@@ -444,7 +443,7 @@ class _HomeScreenState extends State<HomeScreen> {
         const SizedBox(height: 8),
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
           ),
@@ -459,7 +458,7 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             color: Colors.redAccent,
             child: const Text(
               '🎁 Get Your Reward Here 🎁',
@@ -471,7 +470,7 @@ class _HomeScreenState extends State<HomeScreen> {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: 20),
+         const SizedBox(height: 20),
           const Text(
             'Scan QR Code',
             style: TextStyle(
@@ -479,7 +478,7 @@ class _HomeScreenState extends State<HomeScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 20),
+         const SizedBox(height: 20),
           GestureDetector(
             onTap: () {
               Navigator.push(
@@ -507,14 +506,14 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         color: Colors.white54,
         width: double.infinity,
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildProfileCard(),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8.0),
@@ -523,7 +522,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.grey.withOpacity(0.3),
                     spreadRadius: 2,
                     blurRadius: 5,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
@@ -592,11 +591,11 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Card(
           elevation: 5,
-          margin: EdgeInsets.all(16.0),
+          margin: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -605,7 +604,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       backgroundImage: NetworkImage(
                           'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f8239007-7d36-45ce-a0a1-fdf91052b10e/299f5e14-73c4-4a9b-99c9-e44adbc218cf.png'),
                     ),
-                    SizedBox(height: 8.0),
+                   const SizedBox(height: 8.0),
                     const Text(
                       'Kshitij Hapase',
                       style: TextStyle(
@@ -613,7 +612,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                   const SizedBox(height: 8.0),
                     const Text(
                       'GOLD    1200 POINTS',
                       style: TextStyle(
@@ -622,7 +621,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                   const SizedBox(height: 8.0),
                     LinearProgressIndicator(
                       value: 0.7,
                       minHeight: 5.0,
@@ -653,11 +652,11 @@ class _HomeScreenState extends State<HomeScreen> {
           top: 8.0,
           right: 8.0,
           child: IconButton(
-            icon: Icon(Icons.edit_outlined),
+            icon: const Icon(Icons.edit_outlined),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => EditProfile()),
+                MaterialPageRoute(builder: (_) => const EditProfile()),
               );
             },
           ),
@@ -668,13 +667,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildRow(String text, IconData icon) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),
