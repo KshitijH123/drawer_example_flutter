@@ -129,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
       if (passwd == password && eml == email) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => HomePage()),
+          MaterialPageRoute(builder: (_) => const HomePage()),
         );
       } else {
         _showDialog('Login Failed', 'Invalid email or password');
