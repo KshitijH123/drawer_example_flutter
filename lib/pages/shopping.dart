@@ -16,7 +16,7 @@ class ShoppingPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Shopping',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
         ),
       ),
       body: ListView.builder(
@@ -29,7 +29,7 @@ class ShoppingPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.0),
             ),
             margin:
-                const EdgeInsets.only(bottom: 16.0), // Spacing between cards
+                const EdgeInsets.only(bottom: 24.0),
             child: InkWell(
               onTap: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -40,9 +40,9 @@ class ShoppingPage extends StatelessWidget {
                 title: Text(
                   items[index],
                   style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.w600),
+                      fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                trailing: const Icon(Icons.add_shopping_cart),
+                trailing: const Icon(Icons.shopping_cart,color: Colors.blueAccent,size: 36,),
               ),
             ),
           );
