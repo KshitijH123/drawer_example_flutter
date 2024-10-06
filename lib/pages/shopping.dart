@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class ShoppingPage extends StatelessWidget {
   final List<String> items = [
     'Switches',
@@ -21,19 +20,31 @@ class ShoppingPage extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
+        padding: const EdgeInsets.all(16.0),
         itemCount: items.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(
-              items[index],
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+          return Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
             ),
-            trailing: const Icon(Icons.add_shopping_cart),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('${items[index]} added to cart!')),
-              );
-            },
+            margin:
+                const EdgeInsets.only(bottom: 16.0), // Spacing between cards
+            child: InkWell(
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('${items[index]} added to cart!')),
+                );
+              },
+              child: ListTile(
+                title: Text(
+                  items[index],
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+                trailing: const Icon(Icons.add_shopping_cart),
+              ),
+            ),
           );
         },
       ),
