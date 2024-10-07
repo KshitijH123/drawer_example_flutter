@@ -3,6 +3,7 @@ import 'package:drawer_example_flutter/pages/edit_profile.dart';
 import 'package:drawer_example_flutter/pages/favoriate_page.dart';
 import 'package:drawer_example_flutter/pages/notification.dart';
 import 'package:drawer_example_flutter/pages/qr_scanner.dart';
+import 'package:drawer_example_flutter/pages/settings_page.dart';
 import 'package:drawer_example_flutter/pages/shipping_address.dart';
 import 'package:drawer_example_flutter/pages/shopping.dart';
 import 'package:flutter/material.dart';
@@ -560,8 +561,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      print('Account Settings tapped');
-                    },
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SettingsPage()),
+                      );                    },
                     child:
                         _buildRow('Account Settings', Icons.settings_outlined),
                   ),
