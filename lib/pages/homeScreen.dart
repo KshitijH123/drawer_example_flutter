@@ -1,6 +1,7 @@
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
 import 'package:drawer_example_flutter/pages/edit_profile.dart';
 import 'package:drawer_example_flutter/pages/favoriate_page.dart';
+import 'package:drawer_example_flutter/pages/loginpage.dart';
 import 'package:drawer_example_flutter/pages/notification.dart';
 import 'package:drawer_example_flutter/pages/qr_scanner.dart';
 import 'package:drawer_example_flutter/pages/settings_page.dart';
@@ -570,8 +571,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         _buildRow('Account Settings', Icons.settings_outlined),
                   ),
                   InkWell(
-                    onTap: () {
-                      print('Log Out tapped');
+                   onTap: () {
+                      _showLogoutConfirmationDialog(context);
                     },
                     child: _buildRow('Log Out', Icons.logout),
                   ),
@@ -859,4 +860,34 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
+void _showLogoutConfirmationDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Log Out'),
+        content: const Text('Are you sure you want to log out?'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+                (route) => false,
+              );
+            },
+            child: const Text('Log Out'),
+          ),
+        ],
+      );
+    },
+  );
 }
