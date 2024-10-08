@@ -24,6 +24,11 @@ class _SettingsPageState extends State<SettingsPage> {
           _buildListTile('Edit Profile', Icons.edit, () {
           }),
           _buildListTile('Change Password', Icons.lock, () {
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ChangePasswordPage()),
+            );
           }),
 
           const Divider(),
