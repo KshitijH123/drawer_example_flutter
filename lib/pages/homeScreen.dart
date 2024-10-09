@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: InputDecoration(
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                  hintText: 'Search Items',
+                  hintText: 'Search Products',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30.0),
                     borderSide: BorderSide.none,
@@ -295,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: InputDecoration(
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                  hintText: 'Search',
+                  hintText: 'Search Products',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30.0),
                     borderSide: BorderSide.none,
