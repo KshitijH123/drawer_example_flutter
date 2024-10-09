@@ -21,6 +21,37 @@ class QRScannerScreenState extends State<QRScannerScreen> {
     }
   }
 
+  void _showInfoDialog(String url) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('QR Code Info'),
+          content: Text('This QR code points to: $url\n\nWould you like to open it in a browser?'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Open'),
+              onPressed: () async {
+                if (await canLaunch(url)) {
+                  await launch(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
+                Navigator.of(context).pop(); // Close the dialog
+              },
+            ),
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,13 +79,8 @@ class QRScannerScreenState extends State<QRScannerScreen> {
             child: Center(
               child: result != null
                   ? GestureDetector(
-                      onTap: () async {
-                        final url = result!.code;
-                        if (await canLaunch(url!)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
+                      onTap: () {
+                        _showInfoDialog(result!.code!);
                       },
                       child: Text(
                         'Open Link: ${result!.code}',
