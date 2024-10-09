@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class QRScannerScreen extends StatefulWidget {
   @override
@@ -46,10 +47,20 @@ class QRScannerScreenState extends State<QRScannerScreen> {
             flex: 1,
             child: Center(
               child: result != null
-                  ? Text(
-                      'Ingredients: ${result!.code}',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18),
+                  ? GestureDetector(
+                      onTap: () async {
+                        final url = result!.code;
+                        if (await canLaunch(url!)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Text(
+                        'Open Link: ${result!.code}',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 18, color: Colors.blue),
+                      ),
                     )
                   : Text(
                       'Scan a code',
