@@ -27,19 +27,26 @@ class QRScannerScreenState extends State<QRScannerScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('QR Code Info'),
-          content: Text('This QR code points to: $url\n\nWould you like to open it in a browser?'),
+          content: Text(
+              'This QR code points to: $url\n\nWould you like to open it in a browser?'),
           actions: <Widget>[
             TextButton(
               child: Text('Open'),
               onPressed: () async {
-               
+                if (await canLaunch(url)) {
+                  await launch(url);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not launch $url')),
+                  );
+                }
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
               child: Text('Cancel'),
               onPressed: () {
-                Navigator.of(context).pop(); 
+                Navigator.of(context).pop();
               },
             ),
           ],
