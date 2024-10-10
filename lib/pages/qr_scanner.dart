@@ -27,8 +27,7 @@ class QRScannerScreenState extends State<QRScannerScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('QR Code Info'),
-          content: Text(
-              'This QR code points to: $url\n\nWould you like to open it in a browser?'),
+          content: Text('This QR code points to: $url\n\nWould you like to open it in a browser?'),
           actions: <Widget>[
             TextButton(
               child: Text('Open'),
