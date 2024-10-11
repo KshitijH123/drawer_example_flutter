@@ -1,4 +1,5 @@
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
+import 'package:drawer_example_flutter/pages/credit_and_coupons.dart';
 import 'package:drawer_example_flutter/pages/edit_profile.dart';
 import 'package:drawer_example_flutter/pages/favoriate_page.dart';
 import 'package:drawer_example_flutter/pages/loginpage.dart';
@@ -545,8 +546,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      print('Credit & Coupons tapped');
-                    },
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ShippingAddress()),
+                      );                    },
                     child: _buildRow('Credit & Coupons', Icons.card_membership),
                   ),
                   InkWell(
@@ -554,7 +558,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ShippingAddress()),
+                            builder: (context) => const CreditAndCoupons()),
                       );
                     },
                     child: _buildRow(
