@@ -549,7 +549,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ShippingAddress()),
+                            builder: (context) => const CreditAndCoupons()),
                       );                    },
                     child: _buildRow('Credit & Coupons', Icons.card_membership),
                   ),
@@ -558,7 +558,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CreditAndCoupons()),
+                            builder: (context) => const ShippingAddress()),
                       );
                     },
                     child: _buildRow(
