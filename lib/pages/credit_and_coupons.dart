@@ -41,7 +41,9 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
           children: [
             Text(
               'Point Credits',
-              style: Theme.of(context).textTheme.headlineLarge,
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                    color: Colors.blue, 
+                  ),
             ),
             const SizedBox(height: 10),
             Card(
@@ -55,9 +57,12 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     const SizedBox(height: 8),
-                    Text(
+                   Text(
                       '100 Points',
-                      style: Theme.of(context).textTheme.headlineLarge,
+                      style:
+                          Theme.of(context).textTheme.headlineLarge?.copyWith(
+                                color: Colors.red,
+                              ),
                     ),
                     const SizedBox(height: 10),
                     ElevatedButton(
@@ -72,7 +77,9 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
             const SizedBox(height: 20),
             Text(
               'Available Coupons',
-              style: Theme.of(context).textTheme.headlineLarge,
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                    color: Colors.green,
+                  ),
             ),
             const SizedBox(height: 10),
             Expanded(
@@ -125,7 +132,7 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
         trailing: ElevatedButton(
           onPressed: () {
             setState(() {
-              couponApplied[index] = true; 
+              couponApplied[index] = true;
             });
           },
           child: Text(couponApplied[index] ? 'Applied' : 'Apply'),
