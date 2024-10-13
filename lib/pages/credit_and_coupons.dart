@@ -94,10 +94,10 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
                             ? 'Free Shipping on orders over \$50'
                             : 'Buy 1 Get 1 Free',
                     index == 0
-                        ? 'Valid till: 31 Dec 2023'
+                        ? 'Valid till: 31 Dec 2025'
                         : index == 1
-                            ? 'Valid till: 30 Nov 2023'
-                            : 'Valid till: 15 Oct 2023',
+                            ? 'Valid till: 30 Nov 2025'
+                            : 'Valid till: 15 Oct 2025',
                   );
                 },
               ),
