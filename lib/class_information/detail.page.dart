@@ -13,8 +13,8 @@ class DetailPage extends StatelessWidget {
     required this.price,
     required this.description,
     required this.rating,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
