@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailPage extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String price;
@@ -17,10 +17,24 @@ class DetailPage extends StatelessWidget {
   });
 
   @override
+  _DetailPageState createState() => _DetailPageState();
+}
+
+class _DetailPageState extends State<DetailPage> {
+  bool _isFavorited = false;
+
+  void _toggleFavorite() {
+    setState(() {
+      _isFavorited = !_isFavorited;
+    });
+    print(_isFavorited ? 'Added to Favorites' : 'Removed from Favorites');
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -34,7 +48,7 @@ class DetailPage extends StatelessWidget {
                   bottom: Radius.circular(16),
                 ),
                 child: Image.network(
-                  imageUrl,
+                  widget.imageUrl,
                   fit: BoxFit.contain,
                   width: double.infinity,
                 ),
@@ -46,17 +60,17 @@ class DetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    widget.title,
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                 Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        price,
+                        widget.price,
                         style: const TextStyle(
                           fontSize: 22,
                           color: Colors.green,
@@ -66,18 +80,18 @@ class DetailPage extends StatelessWidget {
                       IconButton(
                         iconSize: 30,
                         icon: Icon(
-                          Icons.favorite,
-                          color: Colors.red[400],
+                          _isFavorited
+                              ? Icons.favorite
+                              : Icons.favorite_outline_outlined,
+                          color: _isFavorited ? Colors.red[400] : Colors.grey,
                         ),
-                        onPressed: () {
-                          print('Added to Favorites');
-                        },
+                        onPressed: _toggleFavorite,
                       ),
                     ],
                   ),
                   SizedBox(height: 20),
                   Text(
-                    description,
+                    widget.description,
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black87,
@@ -85,29 +99,26 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    rating,
+                    widget.rating,
                     style: const TextStyle(
                       fontSize: 14,
                       color: Colors.grey,
                     ),
                   ),
-                SizedBox(height: 20),
+                  SizedBox(height: 20),
                   Row(
                     children: [
                       Expanded(
                         child: Center(
                           child: ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                              minimumSize: const Size(
-                                  double.infinity, 60), 
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 16), 
-                                  backgroundColor: Colors.yellow[400],
+                              minimumSize: const Size(double.infinity, 60),
+                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              backgroundColor: Colors.yellow[400],
                             ),
                             onPressed: () {
                               print('Added to Cart');
                             },
-                           
                             label: const Text(
                               'Add to Cart',
                               style: TextStyle(fontSize: 20),
@@ -124,27 +135,22 @@ class DetailPage extends StatelessWidget {
                         child: Center(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              minimumSize: const Size(
-                                  double.infinity, 60,), 
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 16), 
-                                  backgroundColor: Colors.orange[400],
+                              minimumSize: const Size(double.infinity, 60),
+                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              backgroundColor: Colors.orange[400],
                             ),
                             onPressed: () {
                               print('Buy Now');
                             },
-                            
                             child: const Text(
                               'Buy Now',
                               style: TextStyle(fontSize: 20),
-                          
                             ),
                           ),
                         ),
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
