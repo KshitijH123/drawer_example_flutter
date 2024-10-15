@@ -12,6 +12,7 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
   late AnimationController _controller;
 
   List<bool> couponApplied = [false, false, false];
+  String redemptionMessage = ''; 
 
   @override
   void initState() {
@@ -28,6 +29,18 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
     super.dispose();
   }
 
+  void redeemPoints() {
+    if (redemptionMessage.isEmpty) {
+      setState(() {
+        redemptionMessage = '100 Points redeemed!'; 
+      });
+    } else {
+      setState(() {
+        redemptionMessage = ''; 
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +55,7 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
             Text(
               'Point Credits',
               style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                    color: Colors.blue, 
+                    color: Colors.blue,
                   ),
             ),
             const SizedBox(height: 10),
@@ -57,7 +70,7 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     const SizedBox(height: 8),
-                   Text(
+                    Text(
                       '100 Points',
                       style:
                           Theme.of(context).textTheme.headlineLarge?.copyWith(
@@ -66,10 +79,21 @@ class _CreditAndCouponsState extends State<CreditAndCoupons>
                     ),
                     const SizedBox(height: 10),
                     ElevatedButton(
-                      onPressed: () {
-                      },
-                      child: const Text('Redeem Points'),
+                      onPressed: redeemPoints, 
+                      child: Text(
+                        redemptionMessage.isEmpty
+                            ? 'Redeem Points'
+                            : 'Redeemed!',
+                      ),
                     ),
+                    if (redemptionMessage.isNotEmpty) 
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Text(
+                          redemptionMessage,
+                          style: const TextStyle(color: Colors.green),
+                        ),
+                      ),
                   ],
                 ),
               ),
