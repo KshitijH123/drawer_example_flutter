@@ -87,10 +87,10 @@ class QRScannerScreenState extends State<QRScannerScreen> {
                       child: Text(
                         'Open Link: ${result!.code}',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, color: Colors.blue),
+                        style: const TextStyle(fontSize: 18, color: Colors.blue),
                       ),
                     )
-                  : Text(
+                  : const Text(
                       'Scan a code',
                       style: TextStyle(fontSize: 18),
                     ),
