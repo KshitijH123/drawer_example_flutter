@@ -1,3 +1,4 @@
+import 'package:drawer_example_flutter/pages/contact_us.dart';
 import 'package:drawer_example_flutter/pages/homeScreen.dart';
 import 'package:drawer_example_flutter/pages/loginpage.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,12 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ContactUs()),
+                );
+                 },
             ),
             ListTile(
               leading: const Icon(Icons.question_mark, size: 30.0),
