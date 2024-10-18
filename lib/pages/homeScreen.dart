@@ -1,4 +1,5 @@
 import 'package:drawer_example_flutter/class_information/detail.page.dart';
+import 'package:drawer_example_flutter/pages/contact_us.dart';
 import 'package:drawer_example_flutter/pages/credit_and_coupons.dart';
 import 'package:drawer_example_flutter/pages/edit_profile.dart';
 import 'package:drawer_example_flutter/pages/favoriate_page.dart';
@@ -539,10 +540,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      print('My Favorite tapped');
-                    },
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ContactInformation ()),
+                      );                     },
                     child: _buildRow(
-                        'My Favorite', Icons.favorite_border_outlined),
+                        'Contact Us', Icons.call_outlined),
                   ),
                   InkWell(
                     onTap: () {
